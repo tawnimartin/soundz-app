@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SOUNDZ SOUNDCLOUD APP</title>
+
+  <!-- ==== STYLE SHEETS ==== -->
+
+  <!-- VENDOR -->
+  <link rel="stylesheet" href="vendor/css/vendor.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Raleway:400,100,200,300,500,600,700|Raleway+Dots|Merriweather:400,300italic,300,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/simple-line-icons.css">
+
+  <!-- OURS -->
+  <link rel="stylesheet" href="css/main.css">
+
+
+  <!-- ==== JAVASCRIPT ==== -->
+
+  <!-- VENDOR -->
+  <script src="vendor/js/vendor.js"></script>
+  <script src="vendor/js/big_slide.js"></script>
+  <script src="//connect.soundcloud.com/sdk.js"></script>
+  <script>
+    SC.initialize({
+      client_id: "7137d47761dac4c8eeeecdb1e16dff67",
+      redirect_uri: "http://localhost:8000.com/callback.html",
+    });
+  </script>
+  
+
+  <!-- TEMPLATES -->
+  <script src="js/templates.js"></script>
+  <script src="js/react_views.js"></script>
+
+  <!-- OURS -->
+  <script src="js/models.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+<script>
+//for the nav
+    $(document).ready(function() {
+      $('.menu-link').bigSlide();
+    });
+</script>
+<div class="content push">
+    <!-- nav stuff -->
+    <a href="#" class="menu-link"><i class="fa fa-bars"></i></a>
+      
+    <nav id="menu" class="panel" role="navigation">
+ 
+    </nav>
+  <!-- /nav stuff -->
+  <!-- -->
+  <div class="content">
+    <div class="header">
+    </div>
+  <!-- /header-->
+  <div class="main-container">
+
+  </div>
+</div>
+</div>
+</body>
+</html>
