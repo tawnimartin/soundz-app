@@ -28,15 +28,15 @@ this["JST"]["header_buttons"] = Handlebars.template({"compiler":[6,">= 2.0.0-bet
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["nav"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<div class=\"avatar\">\n          <img class=\"avatar\" src=\"img/avatar.png\">\n          <div class=\"avatar-name\">Joey\n            <a class=\"log\" src=\"#\">Logout</a>\n          </div>\n        </div>\n          <li><a href=\"search\" class=\"main-nav\" data-name=\"search\">Search Songs</a></li>\n          <li><a href=\"#\" class=\"main-nav\">Playlist</a></li>\n          <li><a href=\"#\" class=\"main-nav\">Register</a></li>";
+    return "<div class=\"avatar\">\n          <img class=\"avatar\" src=\"img/avatar.png\">\n          <div class=\"avatar-name\">Joey\n            <a class=\"log\" src=\"#\">Logout</a>\n          </div>\n        </div>\n          <li><a href=\"search\" class=\"main-nav\" id=\"search-a\" data-name=\"search\">Search Songs</a></li>\n          <li><a href=\"#\" class=\"main-nav\">Playlist</a></li>\n          <li><a href=\"#\" class=\"main-nav\">Register</a></li>";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["search_genre"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<form>\n          <label>\n           <i class=\"fa fa-search\"></i> <input id=\"search\" type=\"text\" name=\"search\" placeholder=\"search by genre\" />\n          </label>\n        </form>";
+    return "<form>\n          <label>\n           <i class=\"fa fa-search\"></i> <input id=\"search-genre\" type=\"text\" name=\"search-genre\" placeholder=\"search by genre\" />\n          </label>\n        </form>";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["search_keyword"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<div class=\"keyword-search\">\n        <form>\n          <label>\n          <i class=\"fa fa-search\"></i> <input id=\"search\" type=\"text\" name=\"search\" placeholder=\"search by keyword\" />\n          </label>\n        </form>\n      </div>";
+    return "<div class=\"keyword-search\">\n        <form>\n          <label>\n          <i class=\"fa fa-search\"></i> <input id=\"search-keyword\" type=\"text\" name=\"search-keyword\" placeholder=\"search by keyword\" />\n          </label>\n        </form>\n      </div>";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["track_collection"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {

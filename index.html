@@ -42,7 +42,17 @@
 <script>
 //for the nav
     $(document).ready(function() {
+      //menu
       $('.menu-link').bigSlide();
+      //clears the other field when one is clicked
+      $( "input[name='search-keyword']" ).click(
+          function(){
+          $( "input[name='search-genre']" ).val('');
+      });
+      $( "input[name='search-genre']" ).click(
+          function(){
+      $( "input[name='search-keyword']" ).val('');
+      });
     });
 </script>
 <div class="content push">

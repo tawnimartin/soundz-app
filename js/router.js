@@ -1,10 +1,10 @@
 var Router = Backbone.Router.extend ({
 
 	routes: {
-		""							: "search",
-		//"genre/:genre"  : "loadGenre",
-		"search" 				: "search",
-		"playlist"	 		: "playList"
+		""									: "search",
+		"genre/:genre"  		: "loadGenre",
+		"search/:kw" 				: "search",
+		"playlist"	 				: "playList"
 	},
 
 	initialize: function() {
@@ -38,28 +38,32 @@ var Router = Backbone.Router.extend ({
 		this.listenTo(this.searchKeywordView, "search:data", function(options) {
 			this.search(options.data);
 		});
+		//listens for genre search 
+		this.listenTo(this.searchGenreView, "search:data", function(options) {
+			this.loadGenre(options.data);
+		});
 
 		this.listenTo(this.navView, "link:click", function(options){
 				switch(options.name) {
         case "search":
-          this.search(router.searchKeywordView.searchkeyword);
+        	this.search();
         break;
         case "playlist":
           this.playList();
         break;
         default:
-          this.loadGenre();
+          this.search();
+          return;
         break;
       }
-      this.navigate(options.href);
+      
     });
 
 	},
 
 	playList: function() {
 		$(".main-container").empty();
-		$(".search-container").empty();
-		$(".main-container").html(this.fireView.render().el);
+		//$(".main-container").html(this.fireView.render().el);
 	},
 
 	loadGenre: function(genre) {
@@ -67,6 +71,7 @@ var Router = Backbone.Router.extend ({
 			this.tracks.loadGenre("electronic");
 		} else {
 		this.tracks.loadGenre(genre);
+		this.navigate("genre/" + genre);
 		}
 	},
 
@@ -74,7 +79,6 @@ var Router = Backbone.Router.extend ({
 		$(".main-container").empty();
 		$(".main-container").html(this.tracksView.render().el);
 		this.search(router.searchKeywordView.searchkeyword);
-
 	},
 
 	search: function(query) {
@@ -83,10 +87,14 @@ var Router = Backbone.Router.extend ({
 		var thisQueryBool = !!query;
 		if(searchQueryBool) {
 			this.tracks.search(searchQuery);
+			this.navigate("search/" + searchQuery);
 		} else if (thisQueryBool) {
 			this.tracks.search(query);
+			this.navigate("search/" + query);
 		} else {
 			this.tracks.search("electro");
+			this.navigate("search");
 		}
+		
 	}
 });
