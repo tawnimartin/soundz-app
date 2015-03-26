@@ -28,7 +28,7 @@ this["JST"]["header_buttons"] = Handlebars.template({"compiler":[6,">= 2.0.0-bet
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["nav"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<div class=\"avatar\">\n          <img class=\"avatar\" src=\"img/avatar.png\">\n          <div class=\"avatar-name\">Joey\n            <a class=\"log\" src=\"#\">Logout</a>\n          </div>\n        </div>\n          <li><a href=\"search\" class=\"main-nav\" id=\"search-a\" data-name=\"search\">Search Songs</a></li>\n          <li><a href=\"#\" class=\"main-nav\">Playlist</a></li>\n          <li><a href=\"#\" class=\"main-nav\">Register</a></li>";
+    return "<div class=\"avatar\">\n          <img class=\"avatar\" src=\"img/avatar.png\">\n          <div class=\"avatar-name\">Joey\n            <a class=\"log\" src=\"#\">Logout</a>\n          </div>\n        </div>\n          <li><a href=\"/search\" class=\"main-nav\" id=\"search-a\" data-name=\"search\">Search Songs</a></li>\n          <li><a href=\"/playlist\" class=\"main-nav\" data-name=\"playlist\">Playlist</a></li>\n          <li><a href=\"#\" class=\"main-nav\">Register</a></li>";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["search_genre"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
