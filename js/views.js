@@ -219,5 +219,40 @@ var TrackCollectionView = Backbone.View.extend ({
   }
 });
 
+//--
+
+var FireView = Backbone.View.extend({
+  template:   JST["playlist"],
+
+  render: function() {
+    var data = this.model.toJSON();
+    this.$el.html (
+      this.template( data )
+    );
+    return this;
+  }
+
+});
+
+//-- 
+
+var FireCollectionView = Backbone.View.extend({
+
+  template: JST["playlist_collection"],
+
+  render: function() {
+    this.$el.html( this.template() );
+    var $tbody = this.$("div");
+
+    this.collection.each(function(model){
+      var view = new TrackView({model: model});
+      $tbody.append(view.render().el);
+    });
+    return this;
+  }
+
+
+});
+
 
 

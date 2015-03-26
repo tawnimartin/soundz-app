@@ -21,6 +21,10 @@ var Router = Backbone.Router.extend ({
     this.tracksView               = new TrackCollectionView({
       collection: this.tracks
     });
+    this.fire                     = new FireCollection();
+    this.fireView                 = new FireCollectionView({
+      collection: this.fire
+    });
 
     //initial structure
 
@@ -65,9 +69,8 @@ var Router = Backbone.Router.extend ({
   },
 
   playList: function() {
-    //$(".header").empty();
-    //$(".main-container").empty();
-    this.navigate("playlist");
+    $(".main-container").empty();
+    $(".main-container").html(this.fireView.render().el);
   },
 
   loadGenre: function(genre) {
@@ -79,7 +82,8 @@ var Router = Backbone.Router.extend ({
   },
 
   search: function(query) {
-    console.log("query", query);
+    $(".main-container").empty();
+    $(".main-container").html(this.tracksView.render().el);
     var QueryBool = !!query;
     if(QueryBool) {
       this.tracks.search(query);
