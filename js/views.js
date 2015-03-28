@@ -89,6 +89,7 @@ var NavView = Backbone.View.extend({
     "click a" : "onClick"
   },
   template: JST["nav"],
+  
   render: function() {
     this.$el.html(this.template());
     return this;

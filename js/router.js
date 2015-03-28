@@ -46,7 +46,7 @@ var Router = Backbone.Router.extend ({
         tiy.views.Header,
         {model: tiy.currentUser}
       ),
-      $(".test").get(0)
+      $(".avatar").get(0)
     );
 
 

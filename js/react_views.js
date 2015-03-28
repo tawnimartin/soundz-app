@@ -1,14 +1,21 @@
 (function(views){
 
   var TwitterLoggedIn = React.createClass({displayName: "TwitterLoggedIn",
+
     render: function() {
+        //get a better image
+        var origImg = this.props.img;
+        var newImg = origImg.substring( 0, origImg.indexOf( "_normal" ) ) + ".jpg";
+        console.log("user", newImg);
         return (
         React.createElement("div", {className: "logged-in", onClick: tiy.logout.bind(tiy)}, 
-          React.createElement("img", {className: "profile-image", src: this.props.img, alt: ""}), 
+          React.createElement("img", {className: "avatar", src: newImg, alt: ""}), 
           " ", 
-          React.createElement("span", null, this.props.name), 
+          React.createElement("div", {className: "avatar-name"}, 
+          React.createElement("div", {className: "avatar-name"}, this.props.name), 
           " ", 
-          React.createElement("button", null, "Sign out")
+          React.createElement("a", {className: "log"}, "Logout")
+         )
         )
       );
     }
@@ -52,7 +59,7 @@
     render: function() {
       return (
         React.createElement("div", null, 
-          React.createElement("div", null, "Testing Twitter Login"), 
+         
           React.createElement(TwitterLogin, {model: this.props.model})
         )
       );
