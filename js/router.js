@@ -29,6 +29,7 @@ var Router = Backbone.Router.extend ({
       collection: this.fire
     });
 
+
     //initial structure
 
     $(".header").html( this.headerView.render().el );
@@ -38,6 +39,15 @@ var Router = Backbone.Router.extend ({
     $(".search-container").append(this.headerButtonsView.render().el);
     $(".main-container").html(this.tracksView.render().el);
     $(".remodal").html(this.registerView.render().el);
+
+    //React views
+    this.header = React.render(
+      React.createElement(
+        tiy.views.Header,
+        {model: tiy.currentUser}
+      ),
+      $(".test").get(0)
+    );
 
 
     //listeners
