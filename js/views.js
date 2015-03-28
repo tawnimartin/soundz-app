@@ -11,7 +11,7 @@ var HeaderView = Backbone.View.extend({
 
 var SearchKeywordView = Backbone.View.extend({
   template: JST["search_keyword"],
-  events: {
+  events: { 
     "submit" : "update"
   },
 
@@ -251,6 +251,18 @@ var FireCollectionView = Backbone.View.extend({
     return this;
   }
 
+
+});
+
+//--
+var RegisterView = Backbone.View.extend({
+
+  template: JST["register"],
+
+  render: function() {
+    this.$el.html(this.template());
+    return this;
+  }
 
 });
 

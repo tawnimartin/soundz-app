@@ -21,7 +21,8 @@
     "react": "~0.13.1",
     "react.backbone": "~0.6.0",
     "firebase": "~2.2.3",
-    "backbonefire": "~0.5.1"
+    "backbonefire": "~0.5.1",
+    "js-md5": "~1.1.0"
   },
   "devDependencies": {
     "mocha": "~2.2.1",

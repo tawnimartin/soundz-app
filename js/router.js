@@ -5,6 +5,7 @@ var Router = Backbone.Router.extend ({
     "genre/:genre"      : "loadGenre",
     "search/:kw"        : "search",
     "playlist"          : "playList",
+    "register"          : "register",
     "*default"          : 'search'
   },
 
@@ -16,6 +17,8 @@ var Router = Backbone.Router.extend ({
     this.searchGenreView          = new SearchGenreView();
     this.headerButtonsView        = new HeaderButtonsView();
     this.navView                  = new NavView();
+    this.registerView             = new RegisterView();
+
       //tracks and fire
     this.tracks                   = new TrackCollection();
     this.tracksView               = new TrackCollectionView({
@@ -34,6 +37,8 @@ var Router = Backbone.Router.extend ({
     $(".search-container").append(this.searchGenreView.render().el);
     $(".search-container").append(this.headerButtonsView.render().el);
     $(".main-container").html(this.tracksView.render().el);
+    $(".remodal").html(this.registerView.render().el);
+
 
     //listeners
     this.listenTo(this.tracks, "reset", function() {
@@ -58,6 +63,9 @@ var Router = Backbone.Router.extend ({
         case "playlist":
           this.playList();
         break;
+        case "modal":
+          this.register();
+        break;
         default:
           this.search();
           return;
@@ -79,6 +87,10 @@ var Router = Backbone.Router.extend ({
     } else {
     this.tracks.loadGenre(genre);
     }
+  },
+
+  register: function() {
+    console.log("hello");
   },
 
   search: function(query) {
