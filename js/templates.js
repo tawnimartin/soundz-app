@@ -20,7 +20,7 @@ this["JST"]["box"] = Handlebars.template({"1":function(depth0,helpers,partials,d
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["header"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "    \n      <div class=\"logo\">SOUNDZ</div>\n      <div class=\"search-container\">\n        \n      \n      </div>\n    </div>\n ";
+    return "    	<hr class=\"logo-hr\"><div class=\"logo-cov\">\n\n      <div class=\"logo\">SOUNDZ</div>\n      </div>\n      <div class=\"search-container\">\n        \n      \n      </div>\n    </div>\n ";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["header_buttons"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
@@ -44,7 +44,7 @@ this["JST"]["playlist_collection"] = Handlebars.template({"compiler":[6,">= 2.0.
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["register"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "\n   <div class=\"reg-wrapper\">\n<div class=\"reg-logo\">SOUNDZ</div>\n</div>\n<div class=\"reg-wrapper\">\n<img src=\"http://www.ideate-interactive.com/IY/images/reg-pic.jpg\">\n<div class=\"reg-bg-right\">\n<div class=\"reg-title\">\n<hr>\nlogin or register\nto explore Soundz\n<hr>\n</div>\n<div class=\"twitter-btn\"><div class=\"left\"><img src=\"http://www.ideate-interactive.com/IY/images/twitter-icon.png\"></div><div class=\"t-text\">Sign up <span>via</span>Twitter</div></div>\n<div class=\"reg-smtext\">We'll never post without your permission.</div>\n\n</div>\n</div>\n    \n";
+    return "\n   <div class=\"reg-wrapper\">\n<div class=\"reg-logo\">SOUNDZ</div>\n</div>\n<div class=\"reg-wrapper\">\n<img src=\"http://www.ideate-interactive.com/IY/images/reg-pic2.jpg\">\n<div class=\"reg-bg-right\">\n<div class=\"reg-title\">\n<hr>\nlogin or register\nto explore Soundz\n<hr>\n</div>\n<div class=\"twitter-btn\"><div class=\"left\"><img src=\"http://www.ideate-interactive.com/IY/images/twitter-icon.png\"></div><div class=\"t-text\">Sign up <span>via</span>Twitter</div></div>\n<div class=\"reg-smtext\">We'll never post without your permission.</div>\n\n</div>\n</div>\n    \n";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["search_genre"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
