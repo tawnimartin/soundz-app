@@ -290,15 +290,15 @@ font-family: 'Lato', sans-serif;
 }
 .menu-nav#li {
 }
-.menu-nav .avatar {
-width: 100px;
+.menu-nav .avatar .inner {
+  width: 100%;
   margin: auto;
   opacity: 0.7;
     filter: alpha(opacity=70);
 	cursor:pointer;
 	  transition: all 0.4s ease;
 }
-.menu-nav .avatar:hover {
+.menu-nav .avatar .inner:hover {
   opacity: 1;
     filter: alpha(opacity=10);
 	  transition: all 0.4s ease;
@@ -310,17 +310,23 @@ width: 100px;
   filter: brightness(1.1);
   -webkit-filter: brightness(1.1);
   width: 80px;
+    margin-left: auto;
+  margin-right: auto;
 }
 .menu-nav .avatar-name {
   color: #efeae0;
   font-family: "Raleway", Helvetica, Arial, sans-serif;
   font-size: 27px;
-  width: 127px;
+  width: 100%;
   text-align: center;
   padding-top: 3px;
   padding-bottom: 0px;
   text-align: center;
-  margin-left: -7px;
+}
+.fa-twitter {
+    font-size: 18px;
+  padding-left: 10px;
+  float:left;
 }
 .menu-nav a.log {
   color: #efeae0;
@@ -331,7 +337,6 @@ width: 100px;
   cursor: pointer;
   font-style: italic;
   display: block;
-  margin-left: -14px;
   padding-bottom: 10px;
 }
 .menu-nav a.log:hover {
@@ -474,4 +479,46 @@ width: 61px;
   text-align: center;
   letter-spacing: 1px;
   font-weight: 300;
+}
+
+.nav-logo-wrapper {
+  height: 57px;
+  background: #94b182;
+  overflow: hidden;
+  font-family: "Raleway", sans-serif;
+  font-size: 28px;
+  color: #cfdcc8;
+  padding-top: 39px;
+  padding-left: 17px;
+  border-bottom: 1px solid #a7c496;
+}
+.nav-twitter-signin {
+  width: 81px;
+  height: 33px;
+  background: #94b182;
+  font-family: "Lato", sans-serif;
+  font-size: 10px;
+  color: #ffffff;
+  margin: 11px 34px 45px 34px;
+  border-radius: 2px;
+  font-weight: 100;
+  cursor: pointer;
+  padding-top: 7px;
+  transition: all 0.4s ease;
+}
+.nav-twitter-signin:hover {
+  background:#03c2fb;
+  transition: all 0.4s ease;
+}
+.nav-twitter-signin .glyph {
+  padding: 0px 0 0 11px;
+  float: left;
+  display: inline-block;
+  font-size: 16px;
+}
+.signin-txt {
+  padding: 4px 0 0px 5px;
+  float: left;
+  display: inline-block;
+  font-size: 9px;
 }

@@ -9,12 +9,14 @@
         console.log("user", newImg);
         return (
         React.createElement("div", {className: "logged-in", onClick: tiy.logout.bind(tiy)}, 
+        React.createElement("div", {className: "inner"}, 
           React.createElement("img", {className: "avatar", src: newImg, alt: ""}), 
           " ", 
           React.createElement("div", {className: "avatar-name"}, 
           React.createElement("div", {className: "avatar-name"}, this.props.name), 
           " ", 
           React.createElement("a", {className: "log"}, "Logout")
+         )
          )
         )
       );
@@ -25,9 +27,11 @@
     render: function() {
         return (
         React.createElement("div", {onClick: tiy.twitterLogin.bind(tiy)}, 
-          React.createElement("span", null, "Sign In With"), 
-          " ", 
-          React.createElement("button", null, "Twitter")
+          React.createElement("div", {className: "nav-logo-wrapper"}, "SOUNDZ"), React.createElement("div", {className: "nav-twitter-signin"}, 
+            React.createElement("i", {className: "fa fa-twitter"}), 
+            React.createElement("div", {className: "signin-txt"}, "SIGN IN")
+          ), 
+          " "
         )
       );
     }

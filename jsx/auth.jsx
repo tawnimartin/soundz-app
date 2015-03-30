@@ -9,12 +9,14 @@
         console.log("user", newImg);
         return (
         <div className="logged-in" onClick={tiy.logout.bind(tiy)}>
+        <div className="inner">
           <img className="avatar" src={newImg} alt=""/>
           {" "}
           <div className="avatar-name">
           <div className="avatar-name">{this.props.name}</div>
           {" "}
           <a className="log">Logout</a>
+         </div>
          </div>
         </div>
       );
@@ -25,9 +27,11 @@
     render: function() {
         return (
         <div onClick={tiy.twitterLogin.bind(tiy)}>
-          <span>Sign In With</span>
+          <div className="nav-logo-wrapper">SOUNDZ</div><div className="nav-twitter-signin">
+            <i className="fa fa-twitter"></i>
+            <div className="signin-txt">SIGN IN</div>
+          </div>
           {" "}
-          <button>Twitter</button>
         </div>
       );
     }
