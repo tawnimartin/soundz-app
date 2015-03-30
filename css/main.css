@@ -396,16 +396,18 @@ input#search-genre {
   float: left;
   margin-top: 63px;
 }
-.reg-title {
+.reg {
   text-align: center;
   font-family: "Lato", sans-serif;
   color: #0b311f;
   font-size: 36px;
   font-style: italic;
   font-weight: 300;
-  padding-right: 80px;
-  padding-left: 83px;
   margin-top: 69px;
+}
+.reg-title {
+  margin-right: 80px;
+  margin-left: 80px;
 }
 .reg-bg-right hr {
   border: 0;
@@ -427,6 +429,7 @@ input#search-genre {
   margin-left: 45px;
   margin-top: 28px;
   border-radius: 2px;
+  margin-right: 14px;
 }
 .twitter-btn:hover {
   background-color: #38a3ed;
@@ -438,6 +441,7 @@ input#search-genre {
   display: inline-block;
   float: left;
   border-right: 1px solid #3ea3e9;
+  margin-right: 17px;
 }
 .twitter-btn .left img {
   width: 61px;
@@ -448,18 +452,24 @@ input#search-genre {
   display: block;
 }
 .twitter-btn .t-text {
-  padding-top: 16px;
+  padding-top: 19px;
   font-family: "Raleway", sans-serif;
   font-size: 26px;
   color: #fdfdfd;
-  padding-left: 32px;
   float: left;
+  display: inline-block;
+  padding-left: 8px;
 }
-.twitter-btn .t-text span {
+.twitter-btn .t-text-sm {
+  padding-top: 18px;
   font-family: "Lato", sans-serif;
   font-size: 21px;
+  color: #fdfdfd;
   font-style: italic;
-  padding-right: 5px;
+  float: left;
+  display: inline-block;
+  padding-right: 0;
+  padding-left: 10px;
 }
 .reg-smtext {
   color: #c69e72;
@@ -512,4 +522,70 @@ input#search-genre {
   float: left;
   display: inline-block;
   font-size: 9px;
+}
+.reg-title-welcome img {
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin-top: -44px;
+  margin-left: 171px;
+  margin-right: auto;
+}
+.reg-title-welcome {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  color: #0b311f;
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 300;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-top: 62px;
+}
+.reg-title-welcome a {
+  color: #3cca86;
+  border-bottom: 1px solid #3cca86;
+  text-decoration: none;
+}
+.reg-title-welcome a:hover {
+  color: #3cca86;
+  border-bottom: none;
+  text-decoration: none;
+}
+.reg-title-text {
+  margin-top: 53px;
+}
+.reg-title-text-sm {
+  font-size: 20px;
+  padding-top: 8px;
+}
+.explore-btn {
+  width: 213px;
+  height: 39px;
+  background: #0b311f;
+  color: #ffffff;
+  border-radius: 23px;
+  font-family: "Lato", sans-serif;
+  font-size: 19px;
+  font-weight: 100;
+  padding-top: 7px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.explore-btn:hover {
+  background: #3cca86;
+  transition: all 0.4s ease;
+}
+.eb-ital {
+  font-style: italic;
+  display: inline;
+}
+.reg-btn-wrapper {
+  width: 213px;
+  margin-right: auto;
+  margin-left: auto;
 }

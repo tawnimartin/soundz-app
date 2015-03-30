@@ -40,7 +40,7 @@ var Router = Backbone.Router.extend ({
     $(".main-container").html(this.tracksView.render().el);
     $(".remodal").html(this.registerView.render().el);
 
-    //React views
+    //React view in nav
     this.header = React.render(
       React.createElement(
         tiy.views.Header,
@@ -48,6 +48,8 @@ var Router = Backbone.Router.extend ({
       ),
       $(".avatar").get(0)
     );
+
+
 
 
     //listeners
@@ -100,7 +102,14 @@ var Router = Backbone.Router.extend ({
   },
 
   register: function() {
-    console.log("hello");
+    //
+    this.regheader = React.render(
+    React.createElement(
+      tiy.views.RegHeader,
+        {model: tiy.currentUser}
+      ),
+      $(".reg-bg-right").get(0)
+    );
   },
 
   search: function(query) {
