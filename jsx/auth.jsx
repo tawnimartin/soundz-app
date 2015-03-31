@@ -75,21 +75,29 @@
   //for Reg modal
   var RegLoggedIn = React.createClass({
 
+    closeRemodal: function() {
+      //find the remodal
+      var inst = $.remodal.lookup[$('[data-remodal-id=register]').data('remodal')];
+      // close the modal
+      inst.close();
+    },
+
     render: function() {
         //get a better image
         var origImg = this.props.img;
         var newImg = origImg.substring( 0, origImg.indexOf( "_normal" ) ) + ".jpg";
         
         return (
-        <div className="logged-in" onClick={tiy.logout.bind(tiy)}>
+        <div className="logged-in">
         <div className="reg-title-welcome">
           <hr />
           <img className="avatar" src={newImg} />
-          <div className="reg-title-text">Hey, {this.props.name}... <a href="">Rock</a> on!<br />
-            <div className="reg-title-text-sm">(or explore <a href="">some other genre</a>)</div></div>
+          <div className="reg-title-text">Hey, {this.props.name}... <a href="/#genre/rock" onClick={this.closeRemodal}>Rock</a> on!<br />
+            <div className="reg-title-text-sm">(or explore <a href="/#search" onClick={this.closeRemodal}>some other genre</a>)</div></div>
           <hr />
         </div>
-        <div className="reg-btn-wrapper"><div className="explore-btn"><div className="eb-ital">explore</div> SOUNDZ</div></div>
+        <div className="reg-btn-wrapper"><a className="explore-btn" href="#">explore SOUNDZ</a></div>
+        <a className="log" onClick={tiy.logout.bind(tiy)}>Logout</a>
         </div>
       );
     }
@@ -109,7 +117,7 @@
           <div className="left">
             <img src="http://www.ideate-interactive.com/IY/images/twitter-icon.png" />
           </div>
-          <div className="t-text">Sign up</div><div className="t-text-sm">via</div><div className="t-text">Twitter</div>
+          <div className="t-text">Sign in</div><div className="t-text-sm">via</div><div className="t-text">Twitter</div>
         </div>
         <div className="reg-smtext">Well never post without your permission.</div>
 

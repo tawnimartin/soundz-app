@@ -49,9 +49,6 @@ var Router = Backbone.Router.extend ({
       $(".avatar").get(0)
     );
 
-
-
-
     //listeners
     this.listenTo(this.tracks, "reset", function() {
     this.tracksView.render();
