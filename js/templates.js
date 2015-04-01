@@ -20,7 +20,7 @@ this["JST"]["box"] = Handlebars.template({"1":function(depth0,helpers,partials,d
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["header"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "    	<hr class=\"logo-hr\"><div class=\"logo-cov\">\n\n      <div class=\"logo\">SOUNDZ</div>\n      </div>\n      <div class=\"search-container\">\n        \n      \n      </div>\n    </div>\n ";
+    return "    	\n      <div class=\"logo\">SOUNDZ</div>\n     \n      <div class=\"search-container\">\n        \n      \n      </div>\n    </div>\n ";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["header_buttons"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {

@@ -86,7 +86,7 @@ var Router = Backbone.Router.extend ({
   },
 
   playList: function() {
-    $(".main-container").empty();
+    //$(".main-container").empty();
     $(".main-container").html(this.fireView.render().el);
   },
 
