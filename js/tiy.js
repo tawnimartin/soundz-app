@@ -41,6 +41,7 @@ window.tiy = {
   // Log out
   logout: function() {
     this.fireRef.unauth();
+    router.navigate('register', {trigger: true});
   },
 
   // Called when a user logs in or out

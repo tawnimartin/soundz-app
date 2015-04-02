@@ -24,8 +24,8 @@
     hashTracking: true,
     closeOnConfirm: true,
     closeOnCancel: true,
-    closeOnEscape: true,
-    closeOnAnyClick: true
+    closeOnEscape: false,
+    closeOnAnyClick: false
   }, window.remodalGlobals && window.remodalGlobals.defaults);
 
   /**

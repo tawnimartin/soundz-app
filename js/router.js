@@ -1,7 +1,7 @@
 var Router = Backbone.Router.extend ({
 
   routes: {
-    ""                  : "search",
+    ""                 : "search",
     "genre/:genre"      : "loadGenre",
     "search/:kw"        : "search",
     "playlist"          : "playList",
@@ -31,7 +31,7 @@ var Router = Backbone.Router.extend ({
 
 
     //initial structure
-
+    $('.menu-link').bigSlide();
     $(".header").html( this.headerView.render().el );
     $("#menu").html( this.navView.render().el );
     $(".search-container").html(this.searchKeywordView.render().el);
@@ -107,6 +107,7 @@ var Router = Backbone.Router.extend ({
       ),
       $(".reg-bg-right").get(0)
     );
+    console.log("current user is", tiy.authData.uid);
   },
 
   search: function(query) {

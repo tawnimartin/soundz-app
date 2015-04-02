@@ -7,15 +7,14 @@
         //get a better image
         var origImg = this.props.img;
         var newImg = origImg.substring( 0, origImg.indexOf( "_normal" ) ) + ".jpg";
-        console.log("user", newImg);
         return (
         React.createElement("div", {className: "logged-in", onClick: tiy.logout.bind(tiy)}, 
         React.createElement("div", {className: "inner"}, 
           React.createElement("img", {className: "avatar", src: newImg, alt: ""}), 
-          " ", 
+         
           React.createElement("div", {className: "avatar-name"}, 
           React.createElement("div", {className: "avatar-name"}, this.props.name), 
-          " ", 
+       
           React.createElement("a", {className: "log"}, "Logout")
          )
          )
@@ -32,8 +31,7 @@
           React.createElement("div", {className: "nav-twitter-signin"}, 
             React.createElement("i", {className: "fa fa-twitter"}), 
             React.createElement("div", {className: "signin-txt"}, "SIGN IN")
-          ), 
-          " "
+          )
         )
       );
     }
