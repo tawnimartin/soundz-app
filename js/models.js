@@ -54,8 +54,17 @@ var TrackCollection = Backbone.Collection.extend({
 var Fire = Backbone.Model.extend({});
 
 var FireCollection = Backbone.Firebase.Collection.extend({
-	url: "https://tiy-intro-tawni.firebaseio.com/collections/fire",
-	model: Track
+	//url: "https://tiy-intro-tawni.firebaseio.com/collections/fire",
+	model: Track,
+
+	url: function() {
+    if(!tiy.authData.uid) {
+        console.log("A user must be logged in.");
+    }
+      var uid = encodeURIComponent(tiy.authData.uid);
+      return tiy.firebaseURL + "/collections/fire/" + uid;
+  }
+
 });
 
 

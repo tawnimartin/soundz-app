@@ -25,6 +25,13 @@ window.tiy = {
 
     this.fireRef = new Firebase(this.firebaseURL);
     this.fireRef.onAuth(this.onAuthCallback);
+
+    this.listenTo(tiy, "sign:in", function(){
+    router.fire                     = new FireCollection();
+    router.fireView                 = new FireCollectionView({
+      collection: router.fire
+    });
+    });
   },
 
   // Login in with Twitter

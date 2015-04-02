@@ -1,7 +1,7 @@
 var Router = Backbone.Router.extend ({
 
   routes: {
-    ""                 : "search",
+    ""                  : "search",
     "genre/:genre"      : "loadGenre",
     "search/:kw"        : "search",
     "playlist"          : "playList",
@@ -24,10 +24,10 @@ var Router = Backbone.Router.extend ({
     this.tracksView               = new TrackCollectionView({
       collection: this.tracks
     });
-    this.fire                     = new FireCollection();
-    this.fireView                 = new FireCollectionView({
-      collection: this.fire
-    });
+    //this.fire                     = new FireCollection();
+    //this.fireView                 = new FireCollectionView({
+      //collection: this.fire
+    //});
 
 
     //initial structure
@@ -63,6 +63,7 @@ var Router = Backbone.Router.extend ({
       this.loadGenre(options.data);
       this.navigate("genre/" + options.data);
     });
+
 
     this.listenTo(this.navView, "link:click", function(options){
         switch(options.name) {
