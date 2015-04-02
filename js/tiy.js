@@ -27,10 +27,10 @@ window.tiy = {
     this.fireRef.onAuth(this.onAuthCallback);
 
     this.listenTo(tiy, "sign:in", function(){
-    router.fire                     = new FireCollection();
-    router.fireView                 = new FireCollectionView({
-      collection: router.fire
-    });
+    // router.fire                     = new FireCollection();
+    // router.fireView                 = new FireCollectionView({
+    //   collection: router.fire
+    // });
     });
   },
 

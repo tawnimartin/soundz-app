@@ -64,6 +64,13 @@ var Router = Backbone.Router.extend ({
       this.navigate("genre/" + options.data);
     });
 
+    this.listenTo(tiy, "sign:in", function(){
+      router.fire                     = new FireCollection();
+      router.fireView                 = new FireCollectionView({
+      collection: router.fire
+    });
+    });
+
 
     this.listenTo(this.navView, "link:click", function(options){
         switch(options.name) {
@@ -108,7 +115,7 @@ var Router = Backbone.Router.extend ({
       ),
       $(".reg-bg-right").get(0)
     );
-    console.log("current user is", tiy.authData.uid);
+    //console.log("current user is", tiy.authData.uid);
   },
 
   search: function(query) {
