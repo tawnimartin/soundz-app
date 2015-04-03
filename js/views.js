@@ -124,6 +124,7 @@ var TrackView = Backbone.View.extend({
     
     this.listenTo(this.model, "stream:playing",  this.playing);
     this.listenTo(this.model, "stream:paused",  this.paused);
+    this.listenTo(this.model, "stream:finished",  this.paused);
 
   },
 

@@ -17,6 +17,39 @@ window.tiy = {
   // Firebase reference
   fireRef: null,
 
+
+  // The SoundManager SoundObject
+  stream: null,
+
+  // the song of the current stream
+  streamID: null,
+
+  // Load a new SoundObject
+  loadStream:  function(id) {
+    this.destroyStream();
+
+    var promise = $.Deferred();
+
+    SC.stream("/tracks/" + id, function(sound){
+      this.streamID = id;
+      this.stream = sound;
+      this.trigger("stream:loaded");
+
+      promise.resolve(sound);
+    }.bind(this));
+
+    return promise;
+  },
+
+  // Stop and destroy the current stream if there is one.
+  destroyStream: function() {
+    if(this.stream) {
+      this.stream.stop();
+      this.stream.destruct();
+      this.trigger("stream:destroyed");
+    }
+  },
+
   // Initialize
   init: function() {
     _.extend(this, Backbone.Events);
@@ -25,8 +58,6 @@ window.tiy = {
 
     this.fireRef = new Firebase(this.firebaseURL);
     this.fireRef.onAuth(this.onAuthCallback);
-
-    this.currentTrack = new PlayableTrack();
   },
 
   // Login in with Twitter

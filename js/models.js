@@ -1,58 +1,23 @@
 var Track = Backbone.Model.extend({
 
 	play: function() {
-		console.log("data", this.id, this.toJSON());
-		if (tiy.currentTrack.id !== this.id) {
-			tiy.currentTrack.stop();
-			tiy.currentTrack.clear();
-			tiy.currentTrack.set( this.toJSON() );
-		}
-
-		tiy.currentTrack.play();
-	},
-
-	pause: function() {
-		tiy.currentTrack.pause();
-	}
-
-});
-
-var PlayableTrack = Backbone.Model.extend({
-
-	initialize: function() {
-		this.on("stream:loaded", this.play);
-	},
-
-	play: function() {
-		if(!this.stream) {
-			this.loadStream();
-		} else {
-			this.stream.play();
+		if(tiy.stream && tiy.streamID === this.id) {
+			tiy.stream.play();
 			this.trigger("stream:playing");
-		}
-	},
-
-	stop: function() {
-		if (this.stream) {
-			console.log("destroying song", this.get("title"));
-			this.stream.stop();
-			this.stream.destruct();
-			this.stream = null;
-			this.trigger("stream:stopped");
+		} else {
+			tiy.loadStream(this.id).done(function(stream){
+				stream.play();
+				this.trigger("stream:playing");
+				this.listenToOnce(tiy, "stream:destroyed", function(){
+					this.trigger("stream:finished");
+				});
+			}.bind(this));
 		}
 	},
 
 	pause: function() {
-		this.stream.pause();
+		tiy.stream.pause();
 		this.trigger("stream:paused");
-	},
-
-	loadStream:  function() {
-		this.trigger("stream:loading");
-		SC.stream("/tracks/" + this.id, function(sound){
-			this.stream = sound;
-			this.trigger("stream:loaded");
-		}.bind(this));
 	}
 
 });
