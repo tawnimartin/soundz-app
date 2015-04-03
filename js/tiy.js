@@ -25,6 +25,8 @@ window.tiy = {
 
     this.fireRef = new Firebase(this.firebaseURL);
     this.fireRef.onAuth(this.onAuthCallback);
+
+    this.currentTrack = new PlayableTrack();
   },
 
   // Login in with Twitter

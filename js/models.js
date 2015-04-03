@@ -1,15 +1,26 @@
 var Track = Backbone.Model.extend({
 
-	initialize: function() {
-		this.on("stream:loaded", this.play);
+	play: function() {
+		console.log("data", this.id, this.toJSON());
+		if (tiy.currentTrack.id !== this.id) {
+			tiy.currentTrack.stop();
+			tiy.currentTrack.clear();
+			tiy.currentTrack.set( this.toJSON() );
+		}
+
+		tiy.currentTrack.play();
 	},
 
-	checkStream: function() {
-		if(window.trackPlayingID === undefined) {
-			this.play();
-		} else {
-			// console.log("trackplayingid: ", trackPlayingID + " this.id: ", this.id);
-		}
+	pause: function() {
+		tiy.currentTrack.pause();
+	}
+
+});
+
+var PlayableTrack = Backbone.Model.extend({
+
+	initialize: function() {
+		this.on("stream:loaded", this.play);
 	},
 
 	play: function() {
@@ -17,8 +28,17 @@ var Track = Backbone.Model.extend({
 			this.loadStream();
 		} else {
 			this.stream.play();
-			window.trackPlayingID = this.id;
 			this.trigger("stream:playing");
+		}
+	},
+
+	stop: function() {
+		if (this.stream) {
+			console.log("destroying song", this.get("title"));
+			this.stream.stop();
+			this.stream.destruct();
+			this.stream = null;
+			this.trigger("stream:stopped");
 		}
 	},
 
@@ -28,16 +48,15 @@ var Track = Backbone.Model.extend({
 	},
 
 	loadStream:  function() {
-		console.log("trackplayingid: ", window.trackPlayingID + " this.id: ", this.id);
 		this.trigger("stream:loading");
 		SC.stream("/tracks/" + this.id, function(sound){
 			this.stream = sound;
-			console.log("loaded");
 			this.trigger("stream:loaded");
 		}.bind(this));
 	}
 
 });
+
 
 //--
 
