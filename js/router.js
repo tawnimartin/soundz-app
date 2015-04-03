@@ -24,10 +24,10 @@ var Router = Backbone.Router.extend ({
     this.tracksView               = new TrackCollectionView({
       collection: this.tracks
     });
-    //this.fire                     = new FireCollection();
-    //this.fireView                 = new FireCollectionView({
-      //collection: this.fire
-    //});
+    this.fire                     = new FireCollection();
+    this.fireView                 = new FireCollectionView({
+      collection: this.fire
+    });
 
 
     //initial structure
@@ -65,10 +65,9 @@ var Router = Backbone.Router.extend ({
     });
 
     this.listenTo(tiy, "sign:in", function(){
-      router.fire                     = new FireCollection();
-      router.fireView                 = new FireCollectionView({
-      collection: router.fire
-    });
+
+      
+  
     });
 
 

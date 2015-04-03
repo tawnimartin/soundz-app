@@ -4,11 +4,20 @@ var Track = Backbone.Model.extend({
 		this.on("stream:loaded", this.play);
 	},
 
+	checkStream: function() {
+		if(window.trackPlayingID === undefined) {
+			this.play();
+		} else {
+			// console.log("trackplayingid: ", trackPlayingID + " this.id: ", this.id);
+		}
+	},
+
 	play: function() {
 		if(!this.stream) {
 			this.loadStream();
 		} else {
 			this.stream.play();
+			window.trackPlayingID = this.id;
 			this.trigger("stream:playing");
 		}
 	},
@@ -19,6 +28,7 @@ var Track = Backbone.Model.extend({
 	},
 
 	loadStream:  function() {
+		console.log("trackplayingid: ", window.trackPlayingID + " this.id: ", this.id);
 		this.trigger("stream:loading");
 		SC.stream("/tracks/" + this.id, function(sound){
 			this.stream = sound;
