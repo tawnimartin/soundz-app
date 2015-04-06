@@ -31,6 +31,24 @@ this["JST"]["nav"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main
     return "<div class=\"avatar\">\n          \n          </div>\n        </div>\n          <li><a href=\"/search\" class=\"main-nav\" id=\"search-a\" data-name=\"search\">Search Songs</a></li>\n          <li><a href=\"/playlist\" class=\"main-nav\" data-name=\"playlist\">Playlist</a></li>\n          <li><a href=\"/register\" class=\"main-nav\" data-name=\"register\" data-remodal-target=\"register\">Sign In</a></li>";
 },"useData":true});
 this["JST"] = this["JST"] || {};
+this["JST"]["play_list"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    var helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression;
+
+  return "    <div class=\"pl-song\">\n    <img class=\"pl-img\" src=\"http://www.ideate-interactive.com/IY/images/album-sample.jpg\"><div class=\"pl-song-title\">"
+    + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"title","hash":{},"data":data}) : helper)))
+    + "</div>\n    <div class=\"pl-song-genre\">"
+    + alias3(((helper = (helper = helpers.genre || (depth0 != null ? depth0.genre : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"genre","hash":{},"data":data}) : helper)))
+    + "</div>\n    <div class=\"glyph delete\"><span class=\"glyph-item mega\" aria-hidden=\"true\" data-icon=\"&#xe082;\" data-js-prompt=\"&amp;#xe005;\"></span></div>\n    </div>";
+},"useData":true});
+this["JST"] = this["JST"] || {};
+this["JST"]["play_list_collection"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    var helper;
+
+  return "<div class=\"header\">\n		<div class=\"playlist-title\">Joey's Playlist</div>\n        <div class=\"soundbars\"><img src=\"http://www.ideate-interactive.com/IY/images/soundbars.png\"></div>\n        <div class=\"pl-status\">now playing...</div>\n        <div class=\"song-title\">Test</div>\n        <div class=\"pl-genre-title\">Genre: </div><div class=\"pl-genre\">"
+    + this.escapeExpression(((helper = (helper = helpers.genre || (depth0 != null ? depth0.genre : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"genre","hash":{},"data":data}) : helper)))
+    + "</div>\n        <div class=\"glyph twit\"><span class=\"glyph-item mega\" aria-hidden=\"true\" data-icon=\"&#xe009;\" data-js-prompt=\"&amp;#xe005;\"></span></div>\n        <div class=\"glyph share\"><span class=\"glyph-item mega\" aria-hidden=\"true\" data-icon=\"&#xe05b;\" data-js-prompt=\"&amp;#xe005;\"></span></div>\n    </div>\n  	<div class=\"main-container\">\n    <div class=\"scrollbars\">\n    <!--song-->\n    </div>\n    </div>";
+},"useData":true});
+this["JST"] = this["JST"] || {};
 this["JST"]["playlist"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var helper;
 

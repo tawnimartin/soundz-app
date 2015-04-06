@@ -73,6 +73,7 @@ var HeaderButtonsView = Backbone.View.extend({
   },
 
   eyeClick: function() {
+    alert("clicked");
     $el = $(".box").children('img')
     $el.show("slow");
   },
@@ -203,6 +204,7 @@ var TrackView = Backbone.View.extend({
 
 });
 
+
 //--TRACK COLLECTION VIEW--//
 var TrackCollectionView = Backbone.View.extend ({
 
@@ -254,6 +256,100 @@ var FireCollectionView = Backbone.View.extend({
   }
 
 
+});
+
+//--PLAYLIST TRACK VIEW ---//
+var PlaylistTrackView = Backbone.View.extend({
+  template:   JST["play_list"],
+  events : {
+      
+      "click .play" : "buttonClick",
+      "click .fav"  : "addtoPlaylist"
+  },
+
+  initialize: function() {
+
+  },
+
+  render: function() {
+
+    var data = this.model.toJSON();
+    data.duration = this.formatDuration(data.duration);
+    this.$el.html (
+      this.template( data )
+    );
+    return this;
+  },
+
+  formatDuration: function(duration) {
+    //convert the milliseconds to minutes
+    duration = duration / 1000 / 60; // seconds // minutes
+    //get mins and sec
+    var minutes = Math.floor(duration);
+    var seconds = Math.round((duration - minutes) * 60);
+    //add a 0 if seconds is less than 10
+    if (seconds < 10) {
+      seconds = "0" + seconds.toString();
+    }
+    //combine the values
+    duration = minutes.toString() + ":" + seconds.toString();
+    return duration;
+  },
+
+  paused: function() {
+
+    var parent = this.$(".play").children();
+    parent.children( ".play-show" ).css( "display", "block" );
+    parent.children( ".pause-show" ).css( "display", "none" );
+  },
+
+  playing: function() {
+
+    var parent = this.$(".play").children();
+    parent.children( ".play-show" ).css( "display", "none" );
+    parent.children( ".pause-show" ).css( "display", "block" );
+  },
+
+  addtoPlaylist: function() {
+
+    fireCollection  = new FireCollection();
+    fireCollection.push(this.model);
+  },
+
+  buttonClick: function(e) {
+    e.preventDefault();
+
+    $btn = $(e.currentTarget);
+
+    if( $btn.children().children( ".play-show" ).css( "display") == "block" ) {
+      $btn.css("background-color", "#855d54");
+      this.model.play();
+    }
+    else if ( $btn.children().children( ".pause-show" ).css( "display") == "block" ) {
+      $btn.css("background-color", "#b39c85");
+      this.model.pause();
+    }
+
+  }
+
+});
+
+//--PLAYLIST TRACK COLLECTION VIEW--//
+var PlaylistCollectionView = Backbone.View.extend ({
+
+  template: JST["play_list_collection"],
+
+  render: function() {
+    this.$el.html( this.template() );
+    //rows
+    var $tbody = this.$("div");
+    this.collection.each(function(model){
+
+      var view = new PlaylistTrackView({model: model});
+      $tbody.append(view.render().el);
+    });
+    return this;
+  }
 });
 
 //--

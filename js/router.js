@@ -4,9 +4,9 @@ var Router = Backbone.Router.extend ({
     ""                  : "search",
     "genre/:genre"      : "loadGenre",
     "search/:kw"        : "search",
-    "playlist"          : "playList",
     "register"          : "register",
-    "*default"          : 'search'
+    "playlist"          : "playList",
+    "*default"          : "playList"
   },
 
   initialize: function() {
@@ -28,10 +28,14 @@ var Router = Backbone.Router.extend ({
     this.fireView                 = new FireCollectionView({
       collection: this.fire
     });
+    this.playlistCollection  = new PlaylistCollectionView({
+      collection: this.fire
+    });
 
 
     //initial structure
     $('.menu-link').bigSlide();
+    $(".header").empty();
     $(".header").html( this.headerView.render().el );
     $("#menu").html( this.navView.render().el );
     $(".search-container").html(this.searchKeywordView.render().el);
@@ -39,6 +43,8 @@ var Router = Backbone.Router.extend ({
     $(".search-container").append(this.headerButtonsView.render().el);
     $(".main-container").html(this.tracksView.render().el);
     $(".remodal").html(this.registerView.render().el);
+    //playlist page scroller
+    $(".scrollbars").ClassyScroll();
 
     //React view in nav
     this.header = React.render(
@@ -55,6 +61,7 @@ var Router = Backbone.Router.extend ({
     });
     //listens for keyword search on form
     this.listenTo(this.searchKeywordView, "search:data", function(options) {
+      alert("listener");
       this.search(options.data);
       this.navigate("search/" + options.data);
     });
@@ -63,13 +70,6 @@ var Router = Backbone.Router.extend ({
       this.loadGenre(options.data);
       this.navigate("genre/" + options.data);
     });
-
-    this.listenTo(tiy, "sign:in", function(){
-
-      
-  
-    });
-
 
     this.listenTo(this.navView, "link:click", function(options){
         switch(options.name) {
@@ -93,8 +93,13 @@ var Router = Backbone.Router.extend ({
   },
 
   playList: function() {
-    //$(".main-container").empty();
-    $(".main-container").html(this.fireView.render().el);
+    //$(".content").empty();
+    //$(".main-container").html(this.fireView.render().el);
+    $(".header").html(this.playlistCollection.render().el);
+    $(".header").addClass( "header-playlist" );
+    $("html").css( "background", "url(http://www.ideate-interactive.com/IY/images/soundz-bg2.jpg) no-repeat center center fixed");
+    $(".main-container").empty();
+    
   },
 
   loadGenre: function(genre) {
@@ -118,8 +123,18 @@ var Router = Backbone.Router.extend ({
   },
 
   search: function(query) {
-    $(".main-container").empty();
+    $(".header").html( this.headerView.render().el );
+    $(".search-container").html(this.searchKeywordView.render().el);
+    $(".search-container").append(this.searchGenreView.render().el);
+    $(".search-container").append(this.headerButtonsView.render().el);
     $(".main-container").html(this.tracksView.render().el);
+
+    this.headerView.delegateEvents();
+    this.searchKeywordView.delegateEvents();
+    this.searchGenreView.delegateEvents();
+    this.headerButtonsView.delegateEvents();
+    this.tracksView.delegateEvents();
+
     var QueryBool = !!query;
     if(QueryBool) {
       this.tracks.search(query);

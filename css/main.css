@@ -44,6 +44,12 @@ a {
   margin-top: 47px;
   overflow: hidden;
 }
+.header-playlist {
+  width: 100%;
+  height: 100%;
+  margin-top: 47px;
+  overflow: visible;
+}
 .fa-bars {
   color: #d7c4a6;
   font-size: 25px;
@@ -599,4 +605,197 @@ input#search-genre {
   color: #3cca86;
   border-bottom: none;
   text-decoration: none;
+}
+/*styles for playlist page*/
+.playlist-title {
+  font-size: 37px;
+  margin-left: 51px;
+  margin-top: -17px;
+  font-weight: 200;
+  color: #c28d66;
+  display: inline-block;
+  float: left;
+}
+.soundbars {
+  display: inline-block;
+  float: left;
+}
+.soundbars img {
+  display: inline-block;
+  float: left;
+  margin: -34px 0 0 20px;
+}
+.pl-status {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
+  font-family: "Lato", sans-serif;
+  color: #c28d66;
+  display: inline-block;
+  float: left;
+  margin: 0px 0 0 20px;
+}
+.playlist-name {
+  display: inline-block;
+  float: left;
+  margin: -10px 0 0 30px;
+  font-size: 27px;
+  font-weight: 200;
+  color: #c28d66;
+}
+.song-title {
+  font-size: 74px;
+  clear: left;
+  margin: 0px 0 0 44px;
+  font-weight: 200;
+  padding-top: 20px;
+  width: 87%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pl-genre-title {
+  clear: left;
+  display: inline-block;
+  float: left;
+  margin: 15px 0 0 49px;
+  color: #c28d66;
+  font-weight: 300;
+  font-style: italic;
+  font-family: "Lato", sans-serif;
+}
+.pl-genre {
+  display: inline-block;
+  float: left;
+  margin: 15px 0 0 9px;
+  font-weight: 300;
+  font-style: italic;
+  font-family: "Lato", sans-serif;
+}
+.header .glyph {
+  display: inline-block;
+  margin: 13px 0 0 17px;
+  font-size: 20px;
+  float: left;
+  color: #c28d66;
+}
+.header .share {
+  margin: 14px 0 0 12px;
+}
+.pl-song {
+  width: 100%;
+  border-top: 1px solid #e1c1a0;
+  padding-top: 15px;
+  height: 48px;
+  margin: 0;
+  color: #855d54;
+  padding: 13px 0 18px 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.pl-song:first-child {
+  border-top: none;
+}
+.pl-song:hover {
+  width: 100%;
+  color: #ffffff;
+  padding-top: 18px;
+  height: 65px;
+  margin: 0;
+  background: #4adf97;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.pl-song:hover .pl-song-title {
+  font-size: 20px;
+  color: #ffffff;
+  width: 360px;
+  transition: all 0.4s ease;
+}
+.pl-song:hover .pl-img {
+  margin-top: -18px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  width: 64px;
+  opacity: 1;
+  transition: all 0.4s ease;
+}
+.pl-song:hover .pl-song-genre {
+  font-size: 20px;
+  color: #ffffff;
+  transition: all 0.4s ease;
+}
+.pl-song:hover .glyph.delete {
+  color: #ffffff;
+  margin-top: 3px;
+  transition: all 0.4s ease;
+}
+.pl-song .pl-img {
+  float: left;
+  display: inline-block;
+  width: 40px;
+  margin-top: -11px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  display: block;
+  opacity: 0.5;
+  transition: all 0.4s ease;
+}
+.pl-song-title {
+  font-family: "Lato", sans-serif;
+  color: #855d54;
+  font-weight: 300;
+  font-size: 16px;
+  float: left;
+  display: inline-block;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 385px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.4s ease;
+}
+.pl-song-genre {
+  font-family: "Lato", sans-serif;
+  color: #855d54;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 113px;
+  margin: 0 15px 0 0;
+  padding: 0;
+  display: inline-block;
+  transition: all 0.4s ease;
+}
+.glyph.delete {
+  float: right;
+  display: inline-block;
+  color: #e1c1a0;
+  font-size: 22px;
+  margin: -3px 10px 0 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.scrollbars {
+  height: 470px;
+  width: 56%;
+  display: inline-block;
+  cursor: pointer;
+}
+.circle {
+  width: 325px;
+  height: 325px;
+  background-color: rgba(255, 255, 253, 0.14);
+  -moz-border-radius: 170px;
+  -webkit-border-radius: 170px;
+  border-radius: 214px;
+  float: right;
+  margin-right: 118px;
+  display: inline-block;
+  -webkit-box-shadow: inset 0px 0px 12px 3px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: inset 0px 0px 12px 3px rgba(0, 0, 0, 0.26);
+  box-shadow: inset 0px 0px 9px 2px rgba(0, 0, 0, 0.1);
+  border: 30px solid rgba(255, 255, 253, 0.14);
 }
