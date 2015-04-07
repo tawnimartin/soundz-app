@@ -73,7 +73,6 @@ var HeaderButtonsView = Backbone.View.extend({
   },
 
   eyeClick: function() {
-    alert("clicked");
     $el = $(".box").children('img')
     $el.show("slow");
   },
@@ -342,7 +341,8 @@ var PlaylistCollectionView = Backbone.View.extend ({
   render: function() {
     this.$el.html( this.template() );
     //rows
-    var $tbody = this.$("div");
+
+    var $tbody = this.$(".scrollbars");
     this.collection.each(function(model){
 
       var view = new PlaylistTrackView({model: model});

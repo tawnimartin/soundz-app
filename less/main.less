@@ -96,11 +96,11 @@ padding: 40px 0 12px 55px;
   margin-left: -3px;
 }
 .view-btns {
-  float: right;
+  float: left;
   font-size: 22px;
   height: 30px;
-  margin-top: 32px;
-  margin-right: 128px;
+  margin-top: 23px;
+  margin-left: 32px;
 }
 .view-btns .glyph {
   float: left;
@@ -663,6 +663,10 @@ margin: 0px 0 0 20px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.pl-subtitles {
+    width: 400px;
+  display: inline-block;
+}
 .pl-genre-title {
   clear: left;
   display: inline-block;
@@ -717,7 +721,7 @@ display: inline-block;
   transition: all 0.4s ease;
 }
 .pl-song:hover .pl-song-title {
-  font-size:20px;
+  font-size:16px;
   color:#ffffff;
     width: 360px;
   transition: all 0.4s ease;
@@ -731,7 +735,7 @@ display: inline-block;
   transition: all 0.4s ease;
 }
 .pl-song:hover .pl-song-genre {
-  font-size:20px;
+  font-size:16px;
   color:#ffffff;
   transition: all 0.4s ease;
 }
@@ -752,19 +756,21 @@ display: inline-block;
     transition: all 0.4s ease;
 }
 .pl-song-title {
-    font-family: "Lato", sans-serif;
-  color:#855d54;
-
+font-family: "Lato", sans-serif;
+  color: #855d54;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 15px;
   float: left;
   display: inline-block;
-    margin-left: 15px;
+  margin-left: 15px;
   margin-right: 15px;
   width: 385px;
-overflow: hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
   transition: all 0.4s ease;
+  height: 20px;
+  text-transform: lowercase;
+  overflow: hidden;
 }
 .pl-song-genre {
   font-family: "Lato", sans-serif;
@@ -791,9 +797,11 @@ float: right;
 }
 .scrollbars {
   height: 470px;
-  width: 56%;
+  width: 46%;
   display: inline-block;
   cursor: pointer;
+  margin-left: 50px;
+  margin-top: 22px;
 }
 .circle {
   width: 325px;

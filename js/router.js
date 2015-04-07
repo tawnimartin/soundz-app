@@ -6,7 +6,7 @@ var Router = Backbone.Router.extend ({
     "search/:kw"        : "search",
     "register"          : "register",
     "playlist"          : "playList",
-    "*default"          : "playList"
+    "*dataefault"       : "playList"
   },
 
   initialize: function() {
@@ -25,9 +25,9 @@ var Router = Backbone.Router.extend ({
       collection: this.tracks
     });
     this.fire                     = new FireCollection();
-    this.fireView                 = new FireCollectionView({
-      collection: this.fire
-    });
+    //this.fireView                 = new FireCollectionView({
+    //   collection: this.fire
+    // });
     this.playlistCollection  = new PlaylistCollectionView({
       collection: this.fire
     });
@@ -43,8 +43,7 @@ var Router = Backbone.Router.extend ({
     $(".search-container").append(this.headerButtonsView.render().el);
     $(".main-container").html(this.tracksView.render().el);
     $(".remodal").html(this.registerView.render().el);
-    //playlist page scroller
-    $(".scrollbars").ClassyScroll();
+
 
     //React view in nav
     this.header = React.render(
@@ -61,7 +60,6 @@ var Router = Backbone.Router.extend ({
     });
     //listens for keyword search on form
     this.listenTo(this.searchKeywordView, "search:data", function(options) {
-      alert("listener");
       this.search(options.data);
       this.navigate("search/" + options.data);
     });
@@ -97,9 +95,13 @@ var Router = Backbone.Router.extend ({
     //$(".main-container").html(this.fireView.render().el);
     $(".header").html(this.playlistCollection.render().el);
     $(".header").addClass( "header-playlist" );
-    $("html").css( "background", "url(http://www.ideate-interactive.com/IY/images/soundz-bg2.jpg) no-repeat center center fixed");
+        //playlist page scroller
+    $(".scrollbars").ClassyScroll();
     $(".main-container").empty();
-    
+    $("html").css({
+      "background"      : "url(http://www.ideate-interactive.com/IY/images/soundz-bg2.jpg) no-repeat center center fixed",
+      "background-size" : "100%"
+    });
   },
 
   loadGenre: function(genre) {
@@ -123,6 +125,10 @@ var Router = Backbone.Router.extend ({
   },
 
   search: function(query) {
+    $("html").css({
+      "background"      : "url(http://www.ideate-interactive.com/IY/images/soundz-search-bg.jpg) no-repeat center center fixed",
+      "background-size" : "100%"
+    });
     $(".header").html( this.headerView.render().el );
     $(".search-container").html(this.searchKeywordView.render().el);
     $(".search-container").append(this.searchGenreView.render().el);
