@@ -85,7 +85,7 @@ var Router = Backbone.Router.extend ({
           return;
         break;
       }
-      this.navigate(options.href);
+      this.navigate(options.href), {trigger: true};
     });
 
   },
@@ -95,12 +95,14 @@ var Router = Backbone.Router.extend ({
     //$(".main-container").html(this.fireView.render().el);
     $(".header").html(this.playlistCollection.render().el);
     $(".header").addClass( "header-playlist" );
-        //playlist page scroller
     $(".scrollbars").ClassyScroll();
     $(".main-container").empty();
     $("html").css({
       "background"      : "url(http://www.ideate-interactive.com/IY/images/soundz-bg2.jpg) no-repeat center center fixed",
       "background-size" : "100%"
+    });
+    this.listenTo(this.playlistCollection, "song:playing", function(options) {
+      console.log(options.title);
     });
   },
 

@@ -17,7 +17,6 @@ window.tiy = {
   // Firebase reference
   fireRef: null,
 
-
   // The SoundManager SoundObject
   stream: null,
 

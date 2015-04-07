@@ -262,11 +262,12 @@ var PlaylistTrackView = Backbone.View.extend({
   template:   JST["play_list"],
   events : {
       
-      "click .play" : "buttonClick",
-      "click .fav"  : "addtoPlaylist"
+      "click .pl-song" : "buttonClick"
   },
 
   initialize: function() {
+
+    this.listenTo(this.model, "stream:playing",  this.playing);
 
   },
 
@@ -303,10 +304,13 @@ var PlaylistTrackView = Backbone.View.extend({
   },
 
   playing: function() {
+    var obj = this.model.toJSON();
+    var pTitle = obj.title;
+    var pGenre = obj.genre;
 
-    var parent = this.$(".play").children();
-    parent.children( ".play-show" ).css( "display", "none" );
-    parent.children( ".pause-show" ).css( "display", "block" );
+    $(".song-title").html(pTitle);
+    $(".pl-genre").html(pGenre);
+    
   },
 
   addtoPlaylist: function() {
@@ -319,15 +323,7 @@ var PlaylistTrackView = Backbone.View.extend({
     e.preventDefault();
 
     $btn = $(e.currentTarget);
-
-    if( $btn.children().children( ".play-show" ).css( "display") == "block" ) {
-      $btn.css("background-color", "#855d54");
-      this.model.play();
-    }
-    else if ( $btn.children().children( ".pause-show" ).css( "display") == "block" ) {
-      $btn.css("background-color", "#b39c85");
-      this.model.pause();
-    }
+    this.model.play();
 
   }
 
