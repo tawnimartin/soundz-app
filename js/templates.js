@@ -28,7 +28,7 @@ this["JST"]["header_buttons"] = Handlebars.template({"compiler":[6,">= 2.0.0-bet
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["nav"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<div class=\"avatar\">\n          \n          </div>\n        </div>\n          <li><a href=\"/search\" class=\"main-nav\" id=\"search-a\" data-name=\"search\">Search Songs</a></li>\n          <li><a href=\"/playlist\" class=\"main-nav\" data-name=\"playlist\">Playlist</a></li>\n          <li><a href=\"/register\" class=\"main-nav\" data-name=\"register\" data-remodal-target=\"register\">Sign In</a></li>";
+    return "<div class=\"avatar\">\n          \n          </div>\n        </div>\n          <li><a href=\"/search\" class=\"main-nav\" id=\"search-a\" data-name=\"search\">Search Songs</a></li>\n          <li><a href=\"/playlist\" class=\"main-nav\" data-name=\"playlist\">Playlist</a></li>\n";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["play_list"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
@@ -40,7 +40,9 @@ this["JST"]["play_list"] = Handlebars.template({"1":function(depth0,helpers,part
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1, helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression;
 
-  return "    <div class=\"pl-song\">\n    "
+  return "    <div class=\"pl-song\" data-id=\""
+    + alias3(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\">\n    "
     + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.artwork_url : depth0),{"name":"if","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
     + "<div class=\"pl-song-title\">"
     + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"title","hash":{},"data":data}) : helper)))
@@ -50,7 +52,7 @@ this["JST"]["play_list"] = Handlebars.template({"1":function(depth0,helpers,part
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["play_list_collection"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<div class=\"header\">\n		<div class=\"playlist-title\">Joey's Playlist</div>\n        <div class=\"soundbars\"><img src=\"http://www.ideate-interactive.com/IY/images/soundbars.png\"></div>\n        <div class=\"pl-status\">now playing...</div>\n        <div class=\"song-title\"></div>\n        <div class=\"pl-subtitles\">\n            <div class=\"pl-genre-title\">Genre: </div><div class=\"pl-genre\">Electronic</div>\n            <div class=\"glyph twit\"><span class=\"glyph-item mega\" aria-hidden=\"true\" data-icon=\"&#xe009;\" data-js-prompt=\"&amp;#xe005;\"></span></div>\n            <div class=\"glyph share\"><span class=\"glyph-item mega\" aria-hidden=\"true\" data-icon=\"&#xe05b;\" data-js-prompt=\"&amp;#xe005;\"></span></div>\n        </div>\n        </div>\n        <div class=\"scrollbars\">\n    <!--songs-->\n    </div>\n  	<div class=\"main-container\">\n\n    </div>";
+    return "<div class=\"header\">\n		<div class=\"playlist-title\">Joey's Playlist</div>\n        <div class=\"soundbars\"><img src=\"http://www.ideate-interactive.com/IY/images/soundbars.png\"></div>\n        <div class=\"pl-status\">now playing...</div>\n        <div class=\"song-title\"></div>\n        <div class=\"pl-subtitles\">\n            <div class=\"pl-genre-title\">Genre: </div><div class=\"pl-genre\">Electronic</div>\n            <div class=\"glyph twit\"><span class=\"glyph-item mega\" aria-hidden=\"true\" data-icon=\"&#xe009;\" data-js-prompt=\"&amp;#xe005;\"></span></div>\n            <div class=\"glyph share\"><span class=\"glyph-item mega\" aria-hidden=\"true\" data-icon=\"&#xe05b;\" data-js-prompt=\"&amp;#xe005;\"></span></div>\n        </div>\n        </div>\n        <div class=\"scrollbars\">\n    <!--songs-->\n    </div>\n    <div class=\"player-wrapper\">\n        <div class=\"circle\"></div>\n        <div class=\"track-controllers\">\n           <a class=\"backward\" href=\"\"></a><a class=\"playpause\" href=\"\"></a><a class=\"forward\" href=\"\"></a>\n        </div>\n    </div>\n  	<div class=\"main-container\">\n\n    </div>";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["playlist"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {

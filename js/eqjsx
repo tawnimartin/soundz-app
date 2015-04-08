@@ -1,0 +1,26 @@
+window.ReactEQ = React.createClass({
+
+	componentDidMount: function() {
+		var svg = d3.select(this.getDOMNode();
+		this.eq = new Eq(svg);
+		eq.start();
+
+		if (this.props.play) {
+			eq.start();
+		}
+
+	},
+
+	componentWillReceiveProps: function(nextProps) {
+		if(this.props.play) {
+			this.eq.start();
+		} else {
+			this.eq.stop();
+		}
+	},
+
+	render: function() {
+		return <svg/>;
+	}
+
+});

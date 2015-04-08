@@ -2,11 +2,12 @@ var Router = Backbone.Router.extend ({
 
   routes: {
     ""                  : "search",
+    "search"            : "search",
     "genre/:genre"      : "loadGenre",
     "search/:kw"        : "search",
     "register"          : "register",
     "playlist"          : "playList",
-    "*dataefault"       : "playList"
+    "*default"          : "playList"
   },
 
   initialize: function() {
@@ -93,16 +94,20 @@ var Router = Backbone.Router.extend ({
   playList: function() {
     //$(".content").empty();
     //$(".main-container").html(this.fireView.render().el);
-    $(".header").html(this.playlistCollection.render().el);
+    $(".header").html(this.playlistCollection.el);
+    this.playlistCollection.render();
     $(".header").addClass( "header-playlist" );
     $(".scrollbars").ClassyScroll();
     $(".main-container").empty();
     $("html").css({
       "background"      : "url(http://www.ideate-interactive.com/IY/images/soundz-bg2.jpg) no-repeat center center fixed",
-      "background-size" : "100%"
+      "background-size" : "100%",
+      "background-size" : "cover",
+      "min-height"      : "100%"
     });
-    this.listenTo(this.playlistCollection, "song:playing", function(options) {
-      console.log(options.title);
+    this.tracksView.delegateEvents();
+    this.listenTo(this.tracks, "stream:playing", function(options) {
+      //console.log(options.title);
     });
   },
 
@@ -129,7 +134,9 @@ var Router = Backbone.Router.extend ({
   search: function(query) {
     $("html").css({
       "background"      : "url(http://www.ideate-interactive.com/IY/images/soundz-search-bg.jpg) no-repeat center center fixed",
-      "background-size" : "100%"
+      "background-size" : "100%",
+      "background-size" : "cover",
+      "min-height"      : "100%"
     });
     $(".header").html( this.headerView.render().el );
     $(".search-container").html(this.searchKeywordView.render().el);

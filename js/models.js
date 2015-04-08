@@ -4,6 +4,7 @@ var Track = Backbone.Model.extend({
 		if(tiy.stream && tiy.streamID === this.id) {
 			tiy.stream.play();
 			this.trigger("stream:playing");
+    
 		} else {
 			tiy.loadStream(this.id).done(function(stream){
 				stream.play();

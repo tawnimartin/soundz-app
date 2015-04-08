@@ -278,6 +278,11 @@ var PlaylistTrackView = Backbone.View.extend({
     this.$el.html (
       this.template( data )
     );
+
+    if (tiy.streamID === this.model.id) {
+      this.playing();
+    }
+
     return this;
   },
 
@@ -307,21 +312,24 @@ var PlaylistTrackView = Backbone.View.extend({
     var obj = this.model.toJSON();
     var pTitle = obj.title;
     var pGenre = obj.genre;
+    var pID = obj.id;
+    var pArtword = obj.artwork;
 
     $(".song-title").html(pTitle);
     $(".pl-genre").html(pGenre);
-    
+    $(".pl-song-playing").addClass("pl-song").removeClass("pl-song-playing");
+    $("[data-id='" + pID + "']").addClass("pl-song-playing").removeClass("pl-song");
+    $(".song-title").html(pArtword);
+
   },
 
-  addtoPlaylist: function() {
+  removeFromPlaylist: function() {
 
-    fireCollection  = new FireCollection();
-    fireCollection.push(this.model);
+
   },
 
   buttonClick: function(e) {
     e.preventDefault();
-
     $btn = $(e.currentTarget);
     this.model.play();
 
@@ -342,7 +350,8 @@ var PlaylistCollectionView = Backbone.View.extend ({
     this.collection.each(function(model){
 
       var view = new PlaylistTrackView({model: model});
-      $tbody.append(view.render().el);
+      $tbody.append(view.el);
+      view.render();
     });
     return this;
   }
