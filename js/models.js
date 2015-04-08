@@ -54,12 +54,12 @@ var FireCollection = Backbone.Firebase.Collection.extend({
 	model: Track,
 
 	url: function() {
-    if(tiy.authData === null) {
-        url: "https://tiy-intro-tawni.firebaseio.com/collections/fire"
-    } else {
+    // if(tiy.authData === null) {
+    //     url: "https://tiy-intro-tawni.firebaseio.com/collections/fire"
+    // } else {
       var uid = encodeURIComponent(tiy.authData.uid);
       return tiy.firebaseURL + "/collections/fire/" + uid;
-    }
+    // }
   },
 
   initialize: function() {

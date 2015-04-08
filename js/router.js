@@ -43,6 +43,7 @@ var Router = Backbone.Router.extend ({
     $(".search-container").append(this.searchGenreView.render().el);
     $(".search-container").append(this.headerButtonsView.render().el);
     $(".main-container").html(this.tracksView.render().el);
+    $(".scrollbars").ClassyScroll();
     $(".remodal").html(this.registerView.render().el);
 
 
@@ -92,12 +93,13 @@ var Router = Backbone.Router.extend ({
   },
 
   playList: function() {
-    //$(".content").empty();
-    //$(".main-container").html(this.fireView.render().el);
+    // this.playlistCollection.render();
+    // $(".header").html(this.playlistCollection.el);
+    console.log("test");
     $(".header").html(this.playlistCollection.el);
-    this.playlistCollection.render();
+    this.playlistCollection.render()
     $(".header").addClass( "header-playlist" );
-    $(".scrollbars").ClassyScroll();
+    // $(".scrollbars").ClassyScroll();
     $(".main-container").empty();
     $("html").css({
       "background"      : "url(http://www.ideate-interactive.com/IY/images/soundz-bg2.jpg) no-repeat center center fixed",

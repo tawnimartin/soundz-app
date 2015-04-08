@@ -108,9 +108,6 @@ var NavView = Backbone.View.extend({
 });
 
 
-
-
-
 //--TRACK VIEW ---//
 var TrackView = Backbone.View.extend({
   template:   JST["box"],
@@ -348,17 +345,24 @@ var PlaylistCollectionView = Backbone.View.extend ({
 
   template: JST["play_list_collection"],
 
+  initialize: function() {
+    this.listenTo(this.collection, "sync reset", this.render);
+  },
+
   render: function() {
     this.$el.html( this.template() );
     //rows
 
     var $tbody = this.$(".scrollbars");
+    console.log(this.collection);
     this.collection.each(function(model){
-
       var view = new PlaylistTrackView({model: model});
       $tbody.append(view.el);
       view.render();
     });
+
+    $(".scrollbars").ClassyScroll();
+    
     return this;
   },
 
