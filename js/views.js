@@ -313,13 +313,13 @@ var PlaylistTrackView = Backbone.View.extend({
     var pTitle = obj.title;
     var pGenre = obj.genre;
     var pID = obj.id;
-    var pArtword = obj.artwork;
+    var playlistArtwork = obj.artwork_url;
 
     $(".song-title").html(pTitle);
     $(".pl-genre").html(pGenre);
     $(".pl-song-playing").addClass("pl-song").removeClass("pl-song-playing");
     $("[data-id='" + pID + "']").addClass("pl-song-playing").removeClass("pl-song");
-    $(".song-title").html(pArtword);
+    $(".artwork").attr("src", playlistArtwork);
 
   },
 
@@ -339,6 +339,12 @@ var PlaylistTrackView = Backbone.View.extend({
 
 //--PLAYLIST TRACK COLLECTION VIEW--//
 var PlaylistCollectionView = Backbone.View.extend ({
+    events : {
+      
+      "click .playpause" : "playAndPause",
+      "click .forward"   : "skipForward",
+      "click .backward"  : "skipBackward"
+  },
 
   template: JST["play_list_collection"],
 
@@ -354,6 +360,20 @@ var PlaylistCollectionView = Backbone.View.extend ({
       view.render();
     });
     return this;
+  },
+
+  skipForward: function(e) {
+    e.preventDefault();
+    $(document).trigger("skip:forward");
+  },
+
+  skipBackward: function(e) {
+    e.preventDefault();
+    $(document).trigger("skip:backward");
+  },
+
+  playAndPause: function(e) {
+    e.preventDefault();
   }
 });
 

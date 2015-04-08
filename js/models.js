@@ -1,6 +1,7 @@
 var Track = Backbone.Model.extend({
 
 	play: function() {
+		console.log("playing song", this.id);
 		if(tiy.stream && tiy.streamID === this.id) {
 			tiy.stream.play();
 			this.trigger("stream:playing");
@@ -10,7 +11,7 @@ var Track = Backbone.Model.extend({
 				stream.play();
 				this.trigger("stream:playing");
 				this.listenToOnce(tiy, "stream:destroyed", function(){
-					this.trigger("stream:finished");
+					this.trigger("stream:destroyed");
 				});
 			}.bind(this));
 		}
@@ -59,6 +60,44 @@ var FireCollection = Backbone.Firebase.Collection.extend({
       var uid = encodeURIComponent(tiy.authData.uid);
       return tiy.firebaseURL + "/collections/fire/" + uid;
     }
+  },
+
+  initialize: function() {
+		console.log("initializing tracks");
+		this.on("add", function(track){
+			console.log("adding listeners");
+			this.listenTo(track, "stream:playing", function() {
+				this.currentlyPlayingIndex = this.indexOf(track);
+			});
+		});
+
+		$(document).on("skip:forward", function(){
+			this.skipForward();
+		}.bind(this));
+
+		$(document).on("skip:backward", function(){
+			this.skipBackward();
+		}.bind(this));
+	},
+
+	skipForward: function() {
+		var nextIndex = this.currentlyPlayingIndex+1;
+		if (this.at(nextIndex)) {
+			this.at(nextIndex).play();
+		}
+  },
+
+  skipBackward: function() {
+
+  	if (tiy.stream.position/1000 > 1) {
+  		tiy.stream.setPosition(0);
+  	}
+  	else {
+	  	var prevIndex = this.currentlyPlayingIndex-1;
+  		if (this.at(prevIndex)) {
+				this.at(prevIndex).play();
+			}
+  	}
   }
 
 });
