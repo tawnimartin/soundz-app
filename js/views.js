@@ -362,7 +362,7 @@ var PlaylistCollectionView = Backbone.View.extend ({
     });
 
     $(".scrollbars").ClassyScroll();
-    
+
     return this;
   },
 
@@ -378,6 +378,7 @@ var PlaylistCollectionView = Backbone.View.extend ({
 
   playAndPause: function(e) {
     e.preventDefault();
+    $(document).trigger("play:song");
   }
 });
 

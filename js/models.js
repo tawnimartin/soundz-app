@@ -78,6 +78,10 @@ var FireCollection = Backbone.Firebase.Collection.extend({
 		$(document).on("skip:backward", function(){
 			this.skipBackward();
 		}.bind(this));
+
+		$(document).on("play:song", function(){
+			this.pauseSong();
+		}.bind(this));
 	},
 
 	skipForward: function() {
@@ -98,6 +102,11 @@ var FireCollection = Backbone.Firebase.Collection.extend({
 				this.at(prevIndex).play();
 			}
   	}
+  },
+
+  pauseSong: function() {
+  	var thisIndex = this.currentlyPlayingIndex;
+  	this.at(thisIndex).pause();
   }
 
 });
