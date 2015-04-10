@@ -40,11 +40,25 @@ window.tiy = {
     return promise;
   },
 
+  playStream: function() {
+    this.streamPlaying = true;
+    this.stream.play({
+      whileplaying: function() {
+        tiy.trigger("stream:position");
+      },
+      onfinish: function() {
+        tiy.trigger("stream:finished");
+      }
+    });
+    $(document).trigger("sound:on");
+  },
+
   // Stop and destroy the current stream if there is one.
   destroyStream: function() {
     if(this.stream) {
       this.stream.stop();
       this.stream.destruct();
+      this.streamPlaying = false;
       this.trigger("stream:destroyed");
     }
   },

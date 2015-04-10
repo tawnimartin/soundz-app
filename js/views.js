@@ -362,6 +362,9 @@ var PlaylistCollectionView = Backbone.View.extend ({
     });
 
     $(".scrollbars").ClassyScroll();
+    this.eq  = new EQView();
+    $(".soundbars").html(this.eq.el);
+    this.eq.render();
 
     return this;
   },

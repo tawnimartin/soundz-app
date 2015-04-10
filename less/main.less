@@ -628,6 +628,8 @@ margin-top: -17px;
 .soundbars {
   display: inline-block;
   float: left;
+  margin-left: 18px;
+  margin-top: -40px;
 }
 .soundbars img {
   display:inline-block;
@@ -642,7 +644,7 @@ margin-top: -17px;
   color: #c28d66;
   display: inline-block;
   float: left;
-margin: 0px 0 0 20px;
+  margin: 0px 0 0 10px;
 }
 .playlist-name {
   display: inline-block;
@@ -729,7 +731,7 @@ display: inline-block;
 .pl-song-playing {
   width: 100%;
    color: #ffffff;
-  padding-top: 18px;
+  padding-top: 21px;
   height: 65px;
   margin: 0;
   background:#4adf97;
@@ -743,7 +745,7 @@ display: inline-block;
   transition: all 0.4s ease;
 }
 .pl-song-playing .pl-img {
-  margin-top: -18px;
+  margin-top: -22px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   width:64px;
@@ -847,10 +849,11 @@ float: right;
   width: 365px;
   display: inline-block;
   overflow: auto;
+  position: relative;
 }
 .circle {
-  width: 345px;
-  height: 345px;
+width: 336px;
+  height: 336px;
   -moz-border-radius: 170px;
   -webkit-border-radius: 170px;
   margin-left: 10px;
@@ -858,7 +861,7 @@ float: right;
   -webkit-box-shadow: inset 0px 0px 12px 3px rgba(0, 0, 0, 0.26);
   -moz-box-shadow: inset 0px 0px 12px 3px rgba(0, 0, 0, 0.26);
   box-shadow: inset 0px 0px 9px 2px rgba(0, 0, 0, 0.1);
-  border: 40px solid rgba(255, 255, 253, 0.14);
+   border: 40px solid rgba(255, 255, 253, 0.14); 
   overflow: hidden;
 }
 .track-controllers {
@@ -866,7 +869,7 @@ float: right;
     margin-top: -24px;
 }
 .track-controllers a.playpause {
-width: 83px;
+  width: 83px;
   margin-right: auto;
   margin-left: auto;
   display: block;
@@ -919,4 +922,10 @@ width: 83px;
     transition: all 0.3s ease;
   }
 
+
+.track-progress {
+  top: 0;
+  position: absolute;
+  left: 10px;
+}
 

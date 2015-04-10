@@ -3,15 +3,18 @@ var Track = Backbone.Model.extend({
 	play: function() {
 		console.log("playing song", this.id);
 		if(tiy.stream && tiy.streamID === this.id) {
-			tiy.stream.play();
+			tiy.playStream();
 			this.trigger("stream:playing");
     
 		} else {
 			tiy.loadStream(this.id).done(function(stream){
-				stream.play();
+				tiy.playStream();
 				this.trigger("stream:playing");
 				this.listenToOnce(tiy, "stream:destroyed", function(){
 					this.trigger("stream:destroyed");
+				});
+				this.listenToOnce(tiy, "stream:finished", function(){
+					this.trigger("stream:finished");
 				});
 			}.bind(this));
 		}
@@ -20,6 +23,7 @@ var Track = Backbone.Model.extend({
 	pause: function() {
 		tiy.stream.pause();
 		this.trigger("stream:paused");
+		$(document).trigger("sound:off");
 	}
 
 });
@@ -68,6 +72,9 @@ var FireCollection = Backbone.Firebase.Collection.extend({
 			console.log("adding listeners");
 			this.listenTo(track, "stream:playing", function() {
 				this.currentlyPlayingIndex = this.indexOf(track);
+			});
+			this.listenTo(track, "stream:finished", function() {
+				this.skipForward();
 			});
 		});
 
