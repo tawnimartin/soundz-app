@@ -195,9 +195,7 @@ var TrackView = Backbone.View.extend({
       $btn.css("background-color", "#b39c85");
       this.model.pause();
     }
-
   }
-
 });
 
 
@@ -317,11 +315,9 @@ var PlaylistTrackView = Backbone.View.extend({
     $(".pl-song-playing").addClass("pl-song").removeClass("pl-song-playing");
     $("[data-id='" + pID + "']").addClass("pl-song-playing").removeClass("pl-song");
     $(".artwork").attr("src", playlistArtwork);
-
   },
 
   removeFromPlaylist: function() {
-
 
   },
 
@@ -329,7 +325,6 @@ var PlaylistTrackView = Backbone.View.extend({
     e.preventDefault();
     $btn = $(e.currentTarget);
     this.model.play();
-
   }
 
 });
@@ -365,6 +360,9 @@ var PlaylistCollectionView = Backbone.View.extend ({
     this.eq  = new EQView();
     $(".soundbars").html(this.eq.el);
     this.eq.render();
+    var tp = new TrackProgress();
+    $(".track-progress").html(tp.el);
+    tp.render();
 
     return this;
   },
@@ -381,6 +379,7 @@ var PlaylistCollectionView = Backbone.View.extend ({
 
   playAndPause: function(e) {
     e.preventDefault();
+    console.log();
     $(document).trigger("play:song");
   }
 });

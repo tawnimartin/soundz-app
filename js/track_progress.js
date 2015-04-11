@@ -121,11 +121,6 @@
 			  .startAngle(0)
 			  .endAngle(2*Math.PI)
 			    
-			// this.cirBG = this.svg.append("path")		
-			//   .style("fill", "brown")
-			//   .attr("d", this.arc)
-			//   .attr("transform", "translate("+(size/2)+","+(size/2)+")")
-
 			this.cir = this.svg.append("path")
 			  .style("stroke", "#4adf96")
 			  .style("fill", "#4adf96")
