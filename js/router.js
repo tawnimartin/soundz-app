@@ -1,7 +1,7 @@
 var Router = Backbone.Router.extend ({
 
   routes: {
-    ""                  : "search",
+    ""                  : "home",
     "search"            : "search",
     "genre/:genre"      : "loadGenre",
     "search/:kw"        : "search",
@@ -32,6 +32,7 @@ var Router = Backbone.Router.extend ({
     this.playlistCollection  = new PlaylistCollectionView({
       collection: this.fire
     });
+    this.homeView               = new HomeView();
 
 
     //initial structure
@@ -93,6 +94,7 @@ var Router = Backbone.Router.extend ({
   },
 
   playList: function() {
+    $( ".content" ).show();
     $(".header").html(this.playlistCollection.el);
     this.playlistCollection.render()
     $(".header").addClass( "header-playlist" );
@@ -136,6 +138,7 @@ var Router = Backbone.Router.extend ({
       "background-size" : "cover",
       "min-height"      : "100%"
     });
+    $( ".content" ).show();
     $(".header").html( this.headerView.render().el );
     $(".search-container").html(this.searchKeywordView.render().el);
     $(".search-container").append(this.searchGenreView.render().el);
@@ -156,5 +159,11 @@ var Router = Backbone.Router.extend ({
       this.tracks.search("electro");
     }
     
+  },
+  home: function() {
+    //
+  $("html").css({ "background"  : "none" });
+  $(".home").html( this.homeView.render().el );
+  $( ".content" ).hide();
   }
 });
