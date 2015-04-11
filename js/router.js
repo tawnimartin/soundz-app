@@ -95,6 +95,7 @@ var Router = Backbone.Router.extend ({
 
   playList: function() {
     $( ".content" ).show();
+    $( ".home" ).hide();
     $(".header").html(this.playlistCollection.el);
     this.playlistCollection.render()
     $(".header").addClass( "header-playlist" );
@@ -132,13 +133,14 @@ var Router = Backbone.Router.extend ({
   },
 
   search: function(query) {
+    $( ".home" ).hide();
+    $( ".content" ).show();
     $("html").css({
       "background"      : "url(http://www.ideate-interactive.com/IY/images/soundz-search-bg.jpg) no-repeat center center fixed",
       "background-size" : "100%",
       "background-size" : "cover",
       "min-height"      : "100%"
     });
-    $( ".content" ).show();
     $(".header").html( this.headerView.render().el );
     $(".search-container").html(this.searchKeywordView.render().el);
     $(".search-container").append(this.searchGenreView.render().el);
@@ -168,5 +170,9 @@ var Router = Backbone.Router.extend ({
   $('#second').parallax("50%", 0.1);
   $('.bg').parallax("50%", 0.4);
   $('#third').parallax("50%", 0.3);
+  $(".home-playlist-btn").click(function(){
+    router.playList();
+    router.navigate("playlist"), {trigger: true};
+  });
   }
 });
