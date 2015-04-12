@@ -257,7 +257,8 @@ var PlaylistTrackView = Backbone.View.extend({
   template:   JST["play_list"],
   events : {
       
-      "click .pl-song" : "buttonClick"
+      "click .pl-song" : "buttonClick",
+      "click .delete"  : "removeFromPlaylist"
   },
 
   initialize: function() {
@@ -318,7 +319,8 @@ var PlaylistTrackView = Backbone.View.extend({
   },
 
   removeFromPlaylist: function() {
-
+    // var userFBRef = new Firebase(tiy.firebaseURL + "/collections/fire/" + uid);
+    // userFBRef.remove(this.model);
   },
 
   buttonClick: function(e) {
@@ -342,6 +344,7 @@ var PlaylistCollectionView = Backbone.View.extend ({
 
   initialize: function() {
     this.listenTo(this.collection, "sync reset", this.render);
+    this.songPaused = false;
   },
 
   render: function() {
@@ -379,8 +382,13 @@ var PlaylistCollectionView = Backbone.View.extend ({
 
   playAndPause: function(e) {
     e.preventDefault();
-    console.log();
-    $(document).trigger("play:song");
+    if (this.songPaused === true) {
+      $(document).trigger("play:song");
+      this.songPaused = false;
+    } else {
+      $(document).trigger("pause:song");
+      this.songPaused = true;
+    }
   }
 });
 
