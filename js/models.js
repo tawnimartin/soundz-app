@@ -54,16 +54,16 @@ var TrackCollection = Backbone.Collection.extend({
 var Fire = Backbone.Model.extend({});
 
 var FireCollection = Backbone.Firebase.Collection.extend({
-	//url: "https://tiy-intro-tawni.firebaseio.com/collections/fire",
 	model: Track,
 
 	url: function() {
-    // if(tiy.authData === null) {
-    //     url: "https://tiy-intro-tawni.firebaseio.com/collections/fire"
-    // } else {
+    if(tiy.authData === null) {
+    		var uid = encodeURIComponent("twitter:3124692005");
+    		return tiy.firebaseURL + "/collections/fire/" + uid;
+    } else {
       var uid = encodeURIComponent(tiy.authData.uid);
       return tiy.firebaseURL + "/collections/fire/" + uid;
-    // }
+    }
   },
 
   initialize: function() {

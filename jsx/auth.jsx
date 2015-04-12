@@ -104,7 +104,7 @@
   var RegNotLogged = React.createClass({
     render: function() {
         return (
-        <div>
+        <div> 
         <hr />
             <div className="reg-title">
             login or register

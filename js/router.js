@@ -174,5 +174,14 @@ var Router = Backbone.Router.extend ({
     router.playList();
     router.navigate("playlist"), {trigger: true};
   });
+    $(".home-signup-btn").click(function(){
+    router.register();
+    router.navigate("register"), {trigger: true};
+  });
+    $(".home-search-btn").click(function(){
+    router.search();
+    router.navigate("search"), {trigger: true};
+  });
+  
   }
 });

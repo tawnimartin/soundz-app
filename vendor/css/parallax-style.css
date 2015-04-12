@@ -138,7 +138,7 @@ text-align: center;
 #third h2 {
   padding-bottom: 0;
   margin-bottom: 0;
-  margin-top: 156px;
+  margin-top: 86px;
   color: #84a9ad;
   font-size: 5em;
   text-align: left;
@@ -171,7 +171,7 @@ text-align: center;
   height: 600px;
 }
 .button-wrapper {
-  width: 273px;
+  width: 334px;
   cursor: pointer;
   margin: auto;
 }
@@ -183,14 +183,18 @@ text-align: center;
   padding: 11px 0 0 0;
   color: #201851;
   border-radius: 3px;
-  margin-top: -4px;
+  margin-top: 8px;
   font-size: 22px;
   font-weight: 200;
   transition: all 0.4s ease;
 }
+.fa-headphones {
+font-size: 17px;
+  margin-right: 6px;
+}
 .home-playlist-btn:hover {
 	background: #201851;
-	color:#908da1;
+	color:#ffffff;
 	transition: all 0.4s ease;
 }
 .button-wrapper2 {
@@ -198,12 +202,31 @@ text-align: center;
   cursor: pointer;
 }
 .home-signup-btn {
-  border: 1px solid #d8eabb;
-  height: 38px;
+  border: 1px solid #15153b;
+  height: 50px;
   font-family: "Raleway", Helvetica, Arial;
   text-align: center;
   padding: 11px 0 0 0;
-  color: #d8eabb;
+  color: #15153b;
+  border-radius: 3px;
+  margin-top: 16px;
+  font-size: 22px;
+  font-weight: 200;
+  transition: all 0.4s ease;
+}
+.home-search-btn:hover {
+	background: #46d5ad;
+	border: 1px solid #46d5ad;
+	color:#1b3b43;
+	transition: all 0.4s ease;
+}
+.home-search-btn {
+border: 1px solid #84a9ad;
+  height: 50px;
+  font-family: "Raleway", Helvetica, Arial;
+  text-align: center;
+  padding: 11px 0 0 0;
+  color: #84a9ad;
   border-radius: 3px;
   margin-top: 16px;
   font-size: 22px;
@@ -211,18 +234,18 @@ text-align: center;
   transition: all 0.4s ease;
 }
 .home-signup-btn:hover {
-	background: #4af0a6;
-	border: 1px solid #4af0a6;
-	color:#1b3b43;
-	transition: all 0.4s ease;
+  background: #4af0a6;
+  border: 1px solid #4af0a6;
+  color:#1b3b43;
+  transition: all 0.4s ease;
 }
 .acct-txt {
 	font-family: "Lato", Helvetica, Arial;
   font-size: 21px;
   font-style: italic;
   text-align: left;
-  color: #d8eabb;
-  font-weight: 200;
+  color: #15153b;
+  font-weight: 300;
 }
 .footer-logo {
   border: 1px solid #ffffff;
@@ -234,7 +257,7 @@ text-align: center;
   border-radius: 2px;
   font-family: "Raleway", sans-serif;
   color: #ffffff;
-  margin: 41px 0 0 0;
+  margin: 9px 0 0 0;
   }
  .footer-logo-wrapper {
   width: 147px;
@@ -245,11 +268,18 @@ text-align: center;
   overflow: auto;
  }
  .footer-links {
-	 margin-top:93px;
+	 margin-top:46px;
 	float:left; 
 	width:100%; 
 	display: block; 
 	text-align: center;
+ }
+ .fa-soundcloud {
+  font-size: 38px;
+  color: #ffffff;
+ }
+ .plus {
+    color: #ffffff;
  }
  .footer-links a {
   display: inline-block;
@@ -261,4 +291,7 @@ text-align: center;
  }
  .footer-links a:hover {
 	 text-decoration:underline;
+ }
+ .sc-icon {
+
  }
