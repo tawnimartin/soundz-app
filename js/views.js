@@ -23,7 +23,6 @@ var SearchKeywordView = Backbone.View.extend({
     update: function(e) {
     e.preventDefault();
     var data = this.$("form :input").val();
-    //console.log(data);
     this.searchkeyword = data;
 
     this.trigger("search:data", {

@@ -26,9 +26,6 @@ var Router = Backbone.Router.extend ({
       collection: this.tracks
     });
     this.fire                     = new FireCollection();
-    //this.fireView                 = new FireCollectionView({
-    //   collection: this.fire
-    // });
     this.playlistCollection  = new PlaylistCollectionView({
       collection: this.fire
     });

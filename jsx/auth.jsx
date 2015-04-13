@@ -6,7 +6,7 @@
     render: function() {
         //get a better image
         var origImg = this.props.img;
-        var newImg = origImg.substring( 0, origImg.indexOf( "_normal" ) ) + ".jpg";
+        var newImg = origImg.substring( 0, origImg.indexOf( "_normal" ) ) + "_400x400.jpg";
         return (
         <div className="logged-in" onClick={tiy.logout.bind(tiy)}>
         <div className="inner">
@@ -83,7 +83,7 @@
     render: function() {
         //get a better image
         var origImg = this.props.img;
-        var newImg = origImg.substring( 0, origImg.indexOf( "_normal" ) ) + ".jpg";
+        var newImg = origImg.substring( 0, origImg.indexOf( "_normal" ) ) + "_400x400.jpg";
         
         return (
         <div className="logged-in">
