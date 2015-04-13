@@ -691,11 +691,10 @@ input#search-genre {
 .pl-song {
   width: 100%;
   border-top: 1px solid #e1c1a0;
-  padding-top: 15px;
   height: 48px;
   margin: 0;
   color: #855d54;
-  padding: 13px 0 18px 0;
+  padding: 15px 0 18px 0;
   cursor: pointer;
   transition: all 0.4s ease;
   background-color: rgba(255, 255, 253, 0.4);
@@ -710,7 +709,7 @@ input#search-genre {
 .pl-song:hover {
   width: 100%;
   color: #ffffff;
-  padding-top: 18px;
+  padding-top: 20px;
   height: 65px;
   margin: 0;
   background: #4adf97;
@@ -755,7 +754,7 @@ input#search-genre {
   transition: all 0.4s ease;
 }
 .pl-song:hover .pl-img {
-  margin-top: -18px;
+  margin-top: -20px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   width: 65px;
@@ -766,11 +765,12 @@ input#search-genre {
 .pl-song:hover .pl-song-genre {
   font-size: 16px;
   color: #ffffff;
+  margin-left: -10px;
   transition: all 0.4s ease;
 }
-.pl-song:hover .glyph.delete {
+.pl-song:hover ~ .delete {
   color: #ffffff;
-  margin-top: 3px;
+  margin-top: -57px;
   transition: all 0.4s ease;
 }
 .pl-song .pl-img {
@@ -794,7 +794,7 @@ input#search-genre {
   display: inline-block;
   margin-left: 15px;
   margin-right: 15px;
-  width: 421px;
+  width: 411px;
   text-overflow: ellipsis;
   transition: all 0.4s ease;
   height: 20px;
@@ -809,24 +809,27 @@ input#search-genre {
   font-size: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 113px;
-  margin: 0 15px 0 0;
-  padding: 0;
+  width: 143px;
+  margin: 0 0 0 0;
+  padding: 0 47px 0 0;
   display: inline-block;
   transition: all 0.4s ease;
 }
 .glyph.delete {
   color: #e1c1a0;
   font-size: 22px;
-  margin: -39px 10px 0 0;
+  margin: -50px 10px 0 0;
   cursor: pointer;
   transition: all 0.4s ease;
   position: relative;
   float: right;
+  width: 36px;
+  padding: 12px 0 0px 7px;
+  height: 46px;
 }
 .glyph.delete:hover {
   color: red;
-  margin: -34px 10px 0 0;
+  padding-top: 16px;
 }
 .scrollbars {
   height: 504px;
