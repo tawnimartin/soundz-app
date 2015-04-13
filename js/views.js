@@ -318,8 +318,8 @@ var PlaylistTrackView = Backbone.View.extend({
   },
 
   removeFromPlaylist: function() {
-    $(".pl-song").remove();
     this.model.destroy();
+    this.$el.remove();
   },
 
   buttonClick: function(e) {
@@ -343,7 +343,7 @@ var PlaylistCollectionView = Backbone.View.extend ({
   template: JST["play_list_collection"],
 
   initialize: function() {
-    this.listenTo(this.collection, "sync reset", this.render);
+    this.listenToOnce(this.collection, "sync reset", this.render);
     this.songPaused = false;
     
   },
