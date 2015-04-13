@@ -103,7 +103,6 @@ var FireCollection = Backbone.Firebase.Collection.extend({
   },
 
   skipBackward: function() {
-
   	if (tiy.stream.position/1000 > 1) {
   		tiy.stream.setPosition(0);
   	}

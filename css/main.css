@@ -835,11 +835,12 @@ input#search-genre {
   cursor: pointer;
   margin-left: 50px;
   margin-top: 22px;
+  margin-right: 25px;
 }
 .player-wrapper {
   width: 365px;
   display: inline-block;
-  overflow: auto;
+  overflow: visible;
   position: relative;
 }
 .circle {
@@ -860,16 +861,30 @@ input#search-genre {
   margin-top: -24px;
 }
 .track-controllers a.playpause {
-  width: 83px;
+  width: 256px;
   margin-right: auto;
   margin-left: auto;
   display: block;
-  height: 82px;
+  height: 257px;
   text-decoration: none;
-  background: url("http://www.ideate-interactive.com/IY/images/pause2.png");
+  position: absolute;
+  top: -277px;
+  left: 50px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 159px;
+  padding-top: 100px;
+}
+.track-controllers a.playpause i {
+  font-size: 60px;
+  color: #ffffff;
+  opacity: 0;
 }
 .track-controllers a.playpause:hover {
-  background-position: -80px 0;
+  background: rgba(237, 213, 187, 0.5);
+}
+.track-controllers a.playpause:hover i {
+  opacity: 0.9;
 }
 .track-controllers a.forward {
   width: 27px;
@@ -879,8 +894,8 @@ input#search-genre {
   height: 20px;
   text-decoration: none;
   position: absolute;
-  top: 32px;
-  right: 110px;
+  top: -156px;
+  right: -16px;
   background: url("http://www.ideate-interactive.com/IY/images/forward.png");
 }
 .track-controllers a.forward:hover {
@@ -894,8 +909,8 @@ input#search-genre {
   height: 20px;
   text-decoration: none;
   position: absolute;
-  top: 32px;
-  left: 111px;
+  top: -156px;
+  right: 360px;
   background: url("http://www.ideate-interactive.com/IY/images/backward.png");
 }
 .track-controllers a.backward:hover {
@@ -912,4 +927,5 @@ input#search-genre {
   top: 0;
   position: absolute;
   left: 10px;
+  overflow: visible;
 }

@@ -384,9 +384,11 @@ var PlaylistCollectionView = Backbone.View.extend ({
     e.preventDefault();
     if (this.songPaused === true) {
       $(document).trigger("play:song");
+      $(".pp-icon").addClass("fa-pause").removeClass("fa-play");
       this.songPaused = false;
     } else {
       $(document).trigger("pause:song");
+      $(".pp-icon").addClass("fa-play").removeClass("fa-pause");
       this.songPaused = true;
     }
   }
