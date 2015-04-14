@@ -55,6 +55,7 @@ var Fire = Backbone.Model.extend({});
 
 var FireCollection = Backbone.Firebase.Collection.extend({
 	model: Track,
+	comparator: "title",
 
 	url: function() {
     if(tiy.authData === null) {

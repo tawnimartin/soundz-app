@@ -94,7 +94,7 @@
             React.createElement("div", {className: "reg-title-text-sm"}, "(or explore ", React.createElement("a", {href: "/#search", onClick: this.closeRemodal}, "some other genre"), ")")), 
           React.createElement("hr", null)
         ), 
-        React.createElement("div", {className: "reg-btn-wrapper"}, React.createElement("a", {className: "explore-btn", href: "/#search", onClick: this.closeRemodal}, "explore SOUNDZ")), 
+        React.createElement("div", {className: "reg-btn-wrapper"}, React.createElement("a", {className: "explore-btn", href: "/", onClick: this.closeRemodal}, "explore SOUNDZ")), 
         React.createElement("a", {className: "log", onClick: tiy.logout.bind(tiy)}, "Logout")
         )
       );

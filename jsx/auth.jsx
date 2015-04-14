@@ -94,7 +94,7 @@
             <div className="reg-title-text-sm">(or explore <a href="/#search" onClick={this.closeRemodal}>some other genre</a>)</div></div>
           <hr />
         </div>
-        <div className="reg-btn-wrapper"><a className="explore-btn" href="/#search" onClick={this.closeRemodal}>explore SOUNDZ</a></div>
+        <div className="reg-btn-wrapper"><a className="explore-btn" href="/" onClick={this.closeRemodal}>explore SOUNDZ</a></div>
         <a className="log" onClick={tiy.logout.bind(tiy)}>Logout</a>
         </div>
       );

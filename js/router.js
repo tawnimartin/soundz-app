@@ -143,7 +143,7 @@ var Router = Backbone.Router.extend ({
     $( ".home" ).hide();
     $( ".content" ).show();
     $("html").css({
-      "background"      : "url(../img/search-bg2.jpg) no-repeat center center fixed",
+      "background"      : "url(http://www.ideate-interactive.com/IY/images/search-bg2.jpg) no-repeat center center fixed",
       "background-size" : "100%",
       "background-size" : "cover",
       "min-height"      : "100%"
