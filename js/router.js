@@ -26,10 +26,10 @@ var Router = Backbone.Router.extend ({
       collection: this.tracks
     });
     this.fire                     = new FireCollection();
-    this.playlistCollection  = new PlaylistCollectionView({
+    this.playlistCollection       = new PlaylistCollectionView({
       collection: this.fire
     });
-    this.homeView               = new HomeView();
+    this.homeView                 = new HomeView();
 
 
     //initial structure
@@ -101,8 +101,13 @@ var Router = Backbone.Router.extend ({
   },
 
   playList: function() {
+    this.playlistCollection       = new PlaylistCollectionView({
+      collection: this.fire
+    });
+
     $( ".content" ).show();
     $( ".home" ).hide();
+    $(".header").empty();
     $(".header").html(this.playlistCollection.el);
     this.playlistCollection.render()
     $(".header").addClass( "header-playlist" );
