@@ -88,6 +88,16 @@ var Router = Backbone.Router.extend ({
       this.navigate(options.href), {trigger: true};
     });
 
+    this.listenTo(tiy, "sign:out", function(){
+      this.navigate('register', {trigger: true});
+    });
+    this.on("route", function(){
+      if(!tiy.isLoggedIn()) {
+        console.log("naving to register");
+        this.navigate("register", {trigger: true, replace: true});
+      }
+    });
+
   },
 
   playList: function() {
@@ -133,7 +143,7 @@ var Router = Backbone.Router.extend ({
     $( ".home" ).hide();
     $( ".content" ).show();
     $("html").css({
-      "background"      : "url(http://www.ideate-interactive.com/IY/images/soundz-search-bg.jpg) no-repeat center center fixed",
+      "background"      : "url(../img/search-bg2.jpg) no-repeat center center fixed",
       "background-size" : "100%",
       "background-size" : "cover",
       "min-height"      : "100%"

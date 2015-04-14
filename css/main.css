@@ -712,7 +712,7 @@ input#search-genre {
   padding-top: 20px;
   height: 65px;
   margin: 0;
-  background: #4adf97;
+  background: #c28d66;
   cursor: pointer;
   transition: all 0.4s ease;
 }
@@ -722,14 +722,14 @@ input#search-genre {
   padding-top: 21px;
   height: 65px;
   margin: 0;
-  background: #4adf97;
+  background: #c28d66;
   cursor: pointer;
   transition: all 0.4s ease;
 }
 .pl-song-playing .pl-song-title {
   font-size: 16px;
   color: #ffffff;
-  width: 360px;
+  width: 374px;
   transition: all 0.4s ease;
 }
 .pl-song-playing .pl-img {
@@ -860,7 +860,7 @@ input#search-genre {
   -webkit-box-shadow: inset 0px 0px 12px 3px rgba(0, 0, 0, 0.26);
   -moz-box-shadow: inset 0px 0px 12px 3px rgba(0, 0, 0, 0.26);
   box-shadow: inset 0px 0px 9px 2px rgba(0, 0, 0, 0.1);
-  border: 40px solid rgba(255, 255, 253, 0.14);
+  border: 40px solid rgba(255, 255, 253, 0.3);
   overflow: hidden;
 }
 .track-controllers {
