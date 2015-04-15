@@ -21,7 +21,7 @@ var Router = Backbone.Router.extend ({
     this.navView                  = new NavView();
     this.registerView             = new RegisterView();
 
-      //tracks and fire
+    //tracks and fire
     this.tracks                   = new TrackCollection();
     this.tracksView               = new TrackCollectionView({
       collection: this.tracks
@@ -142,7 +142,7 @@ var Router = Backbone.Router.extend ({
       ),
       $(".reg-bg-right").get(0)
     );
-    //console.log("current user is", tiy.authData.uid);
+
   },
 
   search: function(query) {

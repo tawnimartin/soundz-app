@@ -103,17 +103,3 @@
   ns.EQView = EQView;
 
 })(window);
-
-// SC.initialize({
-//   client_id: "c8bce9e7fae8a4674a3aaa85dbf9a633"
-// });
-
-// SC.stream("/tracks/293", function(sound){
-//   console.log("--->");
-  
-//   sound.whileplaying = function() {
-//     console.log(this.eqData);
-//   }
-  
-//   sound.play();
-// });

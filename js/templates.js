@@ -78,7 +78,7 @@ this["JST"]["playlist_collection"] = Handlebars.template({"compiler":[6,">= 2.0.
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["register"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "\n<div class=\"reg-wrapper\">\n<div class=\"reg-logo\">SOUNDZ</div>\n</div>\n\n<div class=\"reg-wrapper\">\n	<img src=\"http://www.ideate-interactive.com/IY/images/reg-pic2.jpg\">\n	<div class=\"reg-bg-right\">\n		\n\n</div>\n\n\n\n\n</div>\n    \n";
+    return "\n<div class=\"reg-wrapper\">\n	<div class=\"reg-logo\">SOUNDZ</div>\n</div>\n\n<div class=\"reg-wrapper\">\n	<img src=\"http://www.ideate-interactive.com/IY/images/reg-pic2.jpg\">\n	<div class=\"reg-bg-right\">\n		\n</div>\n\n\n\n\n</div>\n    \n";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["search_genre"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
