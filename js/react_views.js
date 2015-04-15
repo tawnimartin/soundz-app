@@ -106,8 +106,8 @@
         React.createElement("div", {className: "reg-title-welcome"}, 
           React.createElement("hr", null), 
           React.createElement("img", {className: "avatar", src: newImg}), 
-          React.createElement("div", {className: "reg-title-text"}, "Hey, ", this.props.name, "... ", React.createElement("a", {href: "/soundz-app/genre/rock", onClick: this.closeRemodal}, "Rock"), " on!", React.createElement("br", null), 
-            React.createElement("div", {className: "reg-title-text-sm"}, "(or explore ", React.createElement("a", {href: "/soundz-app/search", onClick: this.closeRemodal}, "some other genre"), ")")), 
+          React.createElement("div", {className: "reg-title-text"}, "Hey, ", this.props.name, "... ", React.createElement("a", {href: "/soundz-app/#genre/rock", onClick: this.closeRemodal}, "Rock"), " on!", React.createElement("br", null), 
+            React.createElement("div", {className: "reg-title-text-sm"}, "(or explore ", React.createElement("a", {href: "/soundz-app/#search", onClick: this.closeRemodal}, "some other genre"), ")")), 
           React.createElement("hr", null)
         ), 
         React.createElement("div", {className: "reg-btn-wrapper"}, React.createElement("a", {className: "explore-btn", href: "/soundz-app", onClick: this.closeRemodal}, "explore SOUNDZ")), 
