@@ -7,7 +7,8 @@ var Router = Backbone.Router.extend ({
     "search/:kw"        : "search",
     "register"          : "register",
     "playlist"          : "playList",
-    "*default"          : "playList"
+    "home"              : "home",
+    "*default"          : "home"
   },
 
   initialize: function() {
@@ -174,8 +175,8 @@ var Router = Backbone.Router.extend ({
     }
     
   },
+
   home: function() {
-    //
   $(".home").html( this.homeView.render().el );
   $( ".content" ).hide();
   $('#intro').parallax("50%", 0.1);
@@ -194,6 +195,7 @@ var Router = Backbone.Router.extend ({
     router.search();
     router.navigate("search"), {trigger: true};
   });
+
   
   }
 });

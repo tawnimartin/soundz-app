@@ -73,16 +73,27 @@
   //for Reg modal
   var RegLoggedIn = React.createClass({displayName: "RegLoggedIn",
 
-    closeRemodal: function(page, e) {
-      e.preventDefault();
+    closeRemodal: function() {
+      // e.preventDefault();
       //find the remodal
       var inst = $.remodal.lookup[$('[data-remodal-id=register]').data('remodal')];
       // close the modal
       inst.close();
-      // console.log(test);
-      // var navtoPage = toString(page);
-      router.navigate(page, {trigger: true});
-      router.playList();
+
+      // switch(page) {
+      //   case "rock":
+      //     router.navigate("genre/rock", {trigger: true});
+      //   break;
+      //   case "search":
+      //     router.navigate("search", {trigger: true});
+      //   break;
+      //   case "home":
+      //     router.navigate("home", {trigger: true});
+      //   break;
+      //   default:
+      //   break;
+      // }
+      
     },
 
     render: function() {
@@ -95,11 +106,11 @@
         React.createElement("div", {className: "reg-title-welcome"}, 
           React.createElement("hr", null), 
           React.createElement("img", {className: "avatar", src: newImg}), 
-          React.createElement("div", {className: "reg-title-text"}, "Hey, ", this.props.name, "... ", React.createElement("a", {href: "/#genre/rock", onClick: this.closeRemodal}, "Rock"), " on!", React.createElement("br", null), 
-            React.createElement("div", {className: "reg-title-text-sm"}, "(or explore ", React.createElement("a", {onClick: this.closeRemodal.bind(this, "search")}, "some other genre"), ")")), 
+          React.createElement("div", {className: "reg-title-text"}, "Hey, ", this.props.name, "... ", React.createElement("a", {href: "/soundz-app/genre/rock", onClick: this.closeRemodal}, "Rock"), " on!", React.createElement("br", null), 
+            React.createElement("div", {className: "reg-title-text-sm"}, "(or explore ", React.createElement("a", {href: "/soundz-app/search", onClick: this.closeRemodal}, "some other genre"), ")")), 
           React.createElement("hr", null)
         ), 
-        React.createElement("div", {className: "reg-btn-wrapper"}, React.createElement("a", {className: "explore-btn", onClick: this.closeRemodal.bind(this, "home")}, "explore SOUNDZ")), 
+        React.createElement("div", {className: "reg-btn-wrapper"}, React.createElement("a", {className: "explore-btn", href: "/soundz-app", onClick: this.closeRemodal}, "explore SOUNDZ")), 
         React.createElement("a", {className: "log", onClick: tiy.logout.bind(tiy)}, "Logout")
         )
       );

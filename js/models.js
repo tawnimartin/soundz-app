@@ -91,9 +91,9 @@ var FireCollection = Backbone.Firebase.Collection.extend({
 			this.pauseSong();
 		}.bind(this));
 
-		$(document).on("play:song", function(){
-			this.playSong();
-		}.bind(this));
+		// $(document).on("play:song", function(){
+		// 	this.playSong();
+		// }.bind(this));
 	},
 
 	skipForward: function() {
