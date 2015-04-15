@@ -73,11 +73,16 @@
   //for Reg modal
   var RegLoggedIn = React.createClass({
 
-    closeRemodal: function() {
+    closeRemodal: function(page, e) {
+      e.preventDefault();
       //find the remodal
       var inst = $.remodal.lookup[$('[data-remodal-id=register]').data('remodal')];
       // close the modal
       inst.close();
+      // console.log(test);
+      // var navtoPage = toString(page);
+      router.navigate(page, {trigger: true});
+      router.playList();
     },
 
     render: function() {
@@ -91,10 +96,10 @@
           <hr />
           <img className="avatar" src={newImg} />
           <div className="reg-title-text">Hey, {this.props.name}... <a href="/#genre/rock" onClick={this.closeRemodal}>Rock</a> on!<br />
-            <div className="reg-title-text-sm">(or explore <a href="/#search" onClick={this.closeRemodal}>some other genre</a>)</div></div>
+            <div className="reg-title-text-sm">(or explore <a onClick={this.closeRemodal.bind(this, "search")}>some other genre</a>)</div></div>
           <hr />
         </div>
-        <div className="reg-btn-wrapper"><a className="explore-btn" href="/" onClick={this.closeRemodal}>explore SOUNDZ</a></div>
+        <div className="reg-btn-wrapper"><a className="explore-btn" onClick={this.closeRemodal.bind(this, "home")}>explore SOUNDZ</a></div>
         <a className="log" onClick={tiy.logout.bind(tiy)}>Logout</a>
         </div>
       );
