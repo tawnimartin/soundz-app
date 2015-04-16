@@ -102,7 +102,7 @@ var Router = Backbone.Router.extend ({
   },
 
   playList: function() {
-    this.playlistCollection       = new PlaylistCollectionView({
+    this.playlistCollection   = new PlaylistCollectionView({
       collection: this.fire
     });
 
@@ -120,6 +120,7 @@ var Router = Backbone.Router.extend ({
       "min-height"      : "100%"
     });
     this.tracksView.delegateEvents();
+    this.playlistCollection.delegateEvents();
     this.playlistCollection.delegateEvents();
     this.listenTo(this.tracks, "stream:playing", function(options) {
     });
@@ -178,6 +179,7 @@ var Router = Backbone.Router.extend ({
 
   home: function() {
   $(".home").html( this.homeView.render().el );
+  //$(".home").html( this.homeView.render().el ).show();
   $( ".content" ).hide();
   $('#intro').parallax("50%", 0.1);
   $('#second').parallax("50%", 0.1);

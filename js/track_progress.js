@@ -126,7 +126,7 @@
 			  .style("fill", "#4adf96")
 			  .attr("transform", "translate("+(size/2)+","+(size/2)+")")
 
-			 this.cirClickArea = this.svg.append("path")		
+			this.cirClickArea = this.svg.append("path")		
 			  .style("opacity", 0)
 			  .attr("d", this.arc)
 			  .attr("transform", "translate("+(size/2)+","+(size/2)+")")

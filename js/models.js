@@ -73,6 +73,7 @@ var FireCollection = Backbone.Firebase.Collection.extend({
 			console.log("adding listeners");
 			this.listenTo(track, "stream:playing", function() {
 				this.currentlyPlayingIndex = this.indexOf(track);
+				console.log("now", this.currentlyPlayingIndex);
 			});
 			this.listenTo(track, "stream:finished", function() {
 				this.skipForward();
@@ -94,7 +95,9 @@ var FireCollection = Backbone.Firebase.Collection.extend({
 	},
 
 	skipForward: function() {
+		console.log("current", this.currentlyPlayingIndex);
 		var nextIndex = this.currentlyPlayingIndex+1;
+		console.log("next", nextIndex);
 		if (this.at(nextIndex)) {
 			this.at(nextIndex).play();
 		}

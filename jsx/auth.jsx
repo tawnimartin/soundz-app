@@ -74,26 +74,10 @@
   var RegLoggedIn = React.createClass({
 
     closeRemodal: function() {
-      // e.preventDefault();
       //find the remodal
       var inst = $.remodal.lookup[$('[data-remodal-id=register]').data('remodal')];
       // close the modal
       inst.close();
-
-      // switch(page) {
-      //   case "rock":
-      //     router.navigate("genre/rock", {trigger: true});
-      //   break;
-      //   case "search":
-      //     router.navigate("search", {trigger: true});
-      //   break;
-      //   case "home":
-      //     router.navigate("home", {trigger: true});
-      //   break;
-      //   default:
-      //   break;
-      // }
-      
     },
 
     render: function() {
@@ -106,7 +90,7 @@
         <div className="reg-title-welcome">
           <hr />
           <img className="avatar" src={newImg} />
-          <div className="reg-title-text">Hey, {this.props.name}... <a href="/soundz-app/#search" onClick={this.closeRemodal}>Rock</a> on!<br />
+          <div className="reg-title-text">Hey, {this.props.name}... <a href="/soundz-app/#genre/rock" onClick={this.closeRemodal}>Rock</a> on!<br />
             <div className="reg-title-text-sm">(or explore <a href="/soundz-app/#search" onClick={this.closeRemodal}>some other genre</a>)</div></div>
           <hr />
         </div>

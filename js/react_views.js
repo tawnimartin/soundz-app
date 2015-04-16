@@ -74,26 +74,10 @@
   var RegLoggedIn = React.createClass({displayName: "RegLoggedIn",
 
     closeRemodal: function() {
-      // e.preventDefault();
       //find the remodal
       var inst = $.remodal.lookup[$('[data-remodal-id=register]').data('remodal')];
       // close the modal
       inst.close();
-
-      // switch(page) {
-      //   case "rock":
-      //     router.navigate("genre/rock", {trigger: true});
-      //   break;
-      //   case "search":
-      //     router.navigate("search", {trigger: true});
-      //   break;
-      //   case "home":
-      //     router.navigate("home", {trigger: true});
-      //   break;
-      //   default:
-      //   break;
-      // }
-      
     },
 
     render: function() {
@@ -106,7 +90,7 @@
         React.createElement("div", {className: "reg-title-welcome"}, 
           React.createElement("hr", null), 
           React.createElement("img", {className: "avatar", src: newImg}), 
-          React.createElement("div", {className: "reg-title-text"}, "Hey, ", this.props.name, "... ", React.createElement("a", {href: "/soundz-app/#search", onClick: this.closeRemodal}, "Rock"), " on!", React.createElement("br", null), 
+          React.createElement("div", {className: "reg-title-text"}, "Hey, ", this.props.name, "... ", React.createElement("a", {href: "/soundz-app/#genre/rock", onClick: this.closeRemodal}, "Rock"), " on!", React.createElement("br", null), 
             React.createElement("div", {className: "reg-title-text-sm"}, "(or explore ", React.createElement("a", {href: "/soundz-app/#search", onClick: this.closeRemodal}, "some other genre"), ")")), 
           React.createElement("hr", null)
         ), 
