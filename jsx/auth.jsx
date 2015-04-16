@@ -90,7 +90,7 @@
         <div className="reg-title-welcome">
           <hr />
           <img className="avatar" src={newImg} />
-          <div className="reg-title-text">Hey, {this.props.name}... <a href="/soundz-app/#genre/rock" onClick={this.closeRemodal}>Rock</a> on!<br />
+          <div className="reg-title-text">Hey, {this.props.name}... <a href="/soundz-app/#search" onClick={this.closeRemodal}>Rock</a> on!<br />
             <div className="reg-title-text-sm">(or explore <a href="/soundz-app/#search" onClick={this.closeRemodal}>some other genre</a>)</div></div>
           <hr />
         </div>
