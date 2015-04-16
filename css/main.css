@@ -712,7 +712,7 @@ input#search-genre {
   padding-top: 20px;
   height: 65px;
   margin: 0;
-  background: #c28d66;
+  background: #4adf97;
   cursor: pointer;
   transition: all 0.4s ease;
 }
@@ -722,7 +722,7 @@ input#search-genre {
   padding-top: 21px;
   height: 65px;
   margin: 0;
-  background: #c28d66;
+  background: #4adf97;
   cursor: pointer;
   transition: all 0.4s ease;
 }
